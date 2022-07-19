@@ -9745,12 +9745,18 @@ h3 {
   }
 
   .wrapper .content {
+    position: fixed;
+    width: 100%;
+    float: right;
+  }
+
+  .wrapper .content1 {
     position: relative;
     width: calc(100% - 50px);
     margin-left: 50px;
     float: right;
   }
-
+  
   .wrapper .sidebar::-webkit-scrollbar {
     width: 7px;
   }
