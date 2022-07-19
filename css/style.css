@@ -9744,13 +9744,13 @@ h3 {
     display: flex;
   }
 
-  .wrapper .content {
+  .wrapper .content1 {
     position: fixed;
     width: 100%;
     float: right;
   }
 
-  .wrapper .content1 {
+  .wrapper .content {
     position: relative;
     width: calc(100% - 50px);
     margin-left: 50px;
