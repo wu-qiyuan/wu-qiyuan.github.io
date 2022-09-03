@@ -82,6 +82,11 @@
                             In particular, we show that sim-to-real transfer of anatomical landmark detection in the pelvis benefits from readily available state-of-the-art multi-organ segmentation models, which we have integrated into the popular DeepDRR framework so as to benefit the community.
                             </font></p>
                         <img class="img-fluid mb-4" src="img/drr_schematic.jpeg" alt="Image">
+                        <p style="font-family: Times; text-align:center"><font size="+0.4">
+                            Figure: Overview of the DRR generation pipeline. We hypothesize that more sophisticated anatomical tissue segmen-
+                            tation, as shown in (b), provides a higher quality data source for training deep neural networks on downstream tasks,
+                            such as anatomical landmark detection on the pelvis (d).
+                            </font><br></p>
                         <h3 class="mb-3 font-weight-bold" style="font-family: Optima">Deep Learning based Material Segmentation</h3>
                         <p style="font-family: Times"><font size="+0.7">
                             In this study, nnU-Net and CT-ORG Net are used to generate multi-organ material segmentation. 
@@ -94,6 +99,11 @@
                             A U-Net is trained on these two simulation datasets for the detection of 12 pelvis landmarks, with the results showing in the following figure.
                             </font></p>
                         <img class="img-fluid mb-4" src="img/drr_result.png" alt="Image">
+                        <p style="font-family: Times; text-align:center"><font size="+0.4">
+                            Figure: Performance measurement and examples of landmark detection task. (a) Performance measurement of land-
+                            marks detection distance on real X-ray image dataset. (b),(d) examples from mask-based landmark detection. (c),(e)
+                            examples from thresholding-based landmark detection.
+                            </font><br></p>
                         <p><br><br><br><br><br><br></p>
                     </div>
                 </div>
