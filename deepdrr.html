@@ -88,13 +88,14 @@
                             In this study, nnU-Net and CT-ORG Net are used to generate multi-organ material segmentation. 
                             With different tissue types from nn-UNet, CT-ORG Net and thresholding, a material segmentation of 11 categories is fed into DeepDRR, including bone, liver, bladder, lung, kidney, spleen, gallbladder, esophagus, stomach, other soft tissue and air. 
                             </font></p>
+                        <img class="w-50 float-left mr-4 mb-3" src="img/drr_schematic.jpeg" alt="Image">
                         <h3 class="mb-3 font-weight-bold" style="font-family: Optima">Evaluation Task: Pelvis Landmark Detection</h3>
                         <p style="font-family: Times"><font size="+0.7">
                             Simulation image datasets for both material segmentation strategies (thresholding and deep learning based method) are established based on a set of CT volumes.
                             For each of the 20 CT cases, X-Ray images with size of 768×768 are projected from 200 different views with the direction of principle rays evenly distributed in the cone region within 30 degrees around the AP direction.
                             A U-Net is trained on these two simulation datasets for the detection of 12 pelvis landmarks, with the results showing in the following figure.
                             </font></p>
-                        <img class="w-50 float-left mr-4 mb-3" src="img/MVF2.jpg" alt="Image">
+                        <img class="w-50 float-left mr-4 mb-3" src="img/drr_result.png" alt="Image">
                         <p><br><br><br><br><br><br></p>
                     </div>
                 </div>
