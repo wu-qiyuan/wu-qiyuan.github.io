@@ -93,9 +93,9 @@
                         <br></font></p>
                         <h3 class="mb-3 font-weight-bold" style="font-family: Optima">VAE for Design Space Reduction</h3>
                         <p style="font-family: Times"><font size="+0.7">
-                            Simulation image datasets for both material segmentation strategies (thresholding and deep learning based method) are established based on a set of CT volumes.
-                            For each of the 20 CT cases, X-Ray images with size of 768×768 are projected from 200 different views with the direction of principle rays evenly distributed in the cone region within 30 degrees around the AP direction.
-                            A U-Net is trained on these two simulation datasets for the detection of 12 pelvis landmarks, with the results showing in the following figure.
+                            One impede of fast optimization is that high fidelity pulsatile simulation takes time. 
+                            To reduce the dimension of parameter, a variational autoencoder would be tried to compress planning space into a more efficient latent space. 
+                            After training VAE on generated dataset with geometrical constraints, the optimizer would directly change the value in latent space to proceed iterations.
                             </font></p>
                         <img class="img-fluid mb-4" src="img/sur_VAE.jpeg" alt="Image">
                         <p><br><br><br><br><br><br></p>
