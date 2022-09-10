@@ -120,9 +120,9 @@
                             </font></p>
                         <h3 class="mb-3 font-weight-bold" style="font-family: Optima">Deformable Registration</h3>
                         <p style="font-family: Times"><font size="+0.7">
-                            Simulation image datasets for both material segmentation strategies (thresholding and deep learning based method) are established based on a set of CT volumes.
-                            For each of the 20 CT cases, X-Ray images with size of 768×768 are projected from 200 different views with the direction of principle rays evenly distributed in the cone region within 30 degrees around the AP direction.
-                            A U-Net is trained on these two simulation datasets for the detection of 12 pelvis landmarks, with the results showing in the following figure.
+                            The deformable registration is implemented onto post-operative and follow-up vessel geometries, 
+                            based on a distance map method with B-spline characterization. 
+                            Tissue growth would be calculated from the output transformation.
                             </font></p>
                         <img class="img-fluid mb-4" src="img/sur_registration.png" alt="Image">
                         <p style="font-family: Times; text-align:center"><font size="+0.4">
