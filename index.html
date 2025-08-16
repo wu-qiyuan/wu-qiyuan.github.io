@@ -1,248 +1,289 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Katie Luo</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css">
+  <title>Qiyuan Wu</title>
+  <style>
+    :root {
+      --primary-color: #2c3e50;
+      --secondary-color: #34495e;
+      --text-color: #333;
+      --bg-color: #fff;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    .site-header {
+        background-color: #ede3d0; /* slightly darker beige than hero */
+        background: var(--header-bg);
+        border-bottom: 1px solid var(--border-color);
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
+    
+    .navbar {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 1rem 2rem;
+        display: flex;
+        align-items: center;
+    }
+    
+    .navbar-brand {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: var(--text-color);
+        text-decoration: none;
+    }
+    
+    .navbar-nav.left-nav {
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+        margin-left: 2rem;
+    }
+    
+    .nav-link {
+        color: var(--text-color);
+        text-decoration: none;
+        font-weight: 400;
+        transition: color 0.3s ease;
+    }
+    
+    .nav-link:hover {
+        color: var(--primary-color);
+    }
+    
+    .mode-toggle {
+        margin-left: auto;
+        background: none;
+        border: none;
+        font-size: 1.25rem;
+        cursor: pointer;
+    }
+
+    .page-wrapper {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .page-hero {
+      background-color: #f5f1e6;   /* slightly darker beige */
+      display: flex;
+      flex-direction: row;
+    }
+
+    .avatar-section {
+      flex: 0 0 200px;
+      text-align: center;
+    }
+
+    .avatar {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .hero-name {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-top: 0.5rem;
+    }
+
+    .hero-title {
+      font-size: 1rem;
+      color: var(--secondary-color);
+    }
+
+    .hero-content {
+      flex: 1;
+    }
+
+    .news-container {
+      margin-top: 0.5rem;
+    }
+
+    .news-item {
+      margin-bottom: 0.5rem;
+    }
+
+    .news-date {
+      font-weight: bold;
+      margin-right: 0.5rem;
+    }
+
+    .hero-horizontal-stack {
+      display: flex;
+      flex-direction: row;
+      gap: 2rem;
+      align-items: flex-start;
+    }
+
+    .hero-horizontal-stack .hero-content {
+      flex: 1;
+    }
+
+    /* ---------- Publications section ---------- */
+    .section {
+      background-color: #faf8f3;   /* lighter beige */
+      display: flex;
+      flex-direction: row;
+      margin-top: 3rem;
+      gap: 2rem;
+    }
+
+    .section-left {
+      flex: 0 0 200px;
+    }
+
+    .section-left h2 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
+    .section-left p {
+      font-size: 0.9rem;
+      color: var(--secondary-color);
+      margin-top: 0.3rem;
+    }
+
+    .section-right {
+      flex: 1;
+    }
+
+    .publication {
+      margin-bottom: 1rem;
+    }
+
+    .publication-title {
+      font-weight: bold;
+    }
+
+    .publication-authors {
+      font-style: italic;
+    }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 768px) {
+      .page-hero {
+        flex-direction: column;
+      }
+
+      .hero-horizontal-stack {
+        flex-direction: column;
+      }
+
+      .section {
+        flex-direction: column;
+      }
+
+      .section-left {
+        flex: none;
+      }
+    }
+  </style>
 </head>
 <body>
-
-  <!-- Hero Section -->
-  <header id="hero" class="home-section">
-    <div class="container text-center">
-      <h1>Katie Luo</h1>
-      <p>Postdoctoral Researcher</p>
-      <img src="/~katieluo/images/photo.jpg" alt="Katie Luo" class="rounded-circle" loading="lazy" width="150">
-      <div class="mt-2">
-        <a href="#"><i class="fab fa-github me-2"></i></a>
-        <a href="#"><i class="fab fa-linkedin me-2"></i></a>
-        <a href="#"><i class="fab fa-google me-2"></i></a>
-        <a href="#"><i class="fas fa-envelope"></i></a>
-      </div>
+<header class="site-header">
+    <nav class="navbar">
+        <a href="#" class="navbar-brand">Qiyuan Wu</a>
+        <ul class="navbar-nav left-nav">
+            <li><a href="#about" class="nav-link">About Me</a></li>
+            <li><a href="#news" class="nav-link">News</a></li>
+            <li><a href="#publications" class="nav-link">Publications</a></li>
+            <li><a href="#experience" class="nav-link">Experience</a></li>
+        </ul>
+        <button class="mode-toggle">🌙</button>
+    </nav>
+</header>
+<main class="page-wrapper">
+  <!-- ===== Hero Section ===== -->
+  <div class="page-hero" id="about">
+    <div class="avatar-section">
+        <img src="img/profile.png" alt="Qiyuan Wu" class="avatar">
+        <div class="hero-name">Qiyuan Wu</div>
+        <div class="hero-title">Postdoctoral Researcher</div>
+        <div class="social-icons">
+          <a href="mailto:yourname@domain.com" target="_blank"><i class="fas fa-envelope"></i></a>
+          <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://scholar.google.com/citations?user=XXXX" target="_blank"><i class="fas fa-graduation-cap"></i></a>
+          <a href="https://www.linkedin.com/in/yourusername/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
     </div>
-  </header>
 
-  <!-- Publications Section -->
-  <section id="publications" class="home-section wg-pages">
-    <div class="container">
+    <!-- wrap all content in hero-main -->
+    <div class="hero-main">
+        <div class="hero-content">
+            <h2>About Me</h2>
+            <p>...</p>
+        </div>
+
+        <div class="hero-content">
+            <h2>News</h2>
+            <div class="news-container">
+                <div class="news-item">
+                    <div class="news-date">[Oct. 2024]</div>
+                    <div class="news-content">Gave a talk at …</div>
+                </div>
+                <div class="news-item">
+                    <div class="news-date">[Sep. 2024]</div>
+                    <div class="news-content">Paper accepted at NeurIPS 2024</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-horizontal-stack">
+            <div class="hero-content">
+                <h2>Interests</h2>
+                <p>...</p>
+            </div>
+            <div class="hero-content">
+                <h2>Education</h2>
+                <ul class="education-list">
+                  <li>Ph.D. in Computer Science, Cornell University</li>
+                  <li>B.S. in Physics, Tsinghua University</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+  </div>
+
+  <!-- ===== Publications ===== -->
+  <div class="section" id="publications">
+    <div class="section-left">
       <h2>Publications</h2>
-
-      <!-- Example Publication -->
-      <div class="media stream-item">
-        <div class="media-body">
-          <div class="section-subheading article-title mb-0 mt-0">
-            <a href="/~katieluo/publication/ilvm/">Implicit Latent Variable Model for Scene-Consistent Motion Forecasting</a>
-          </div>
-          <div class="article-style">
-            <i>ICCV 2021</i><br> This paper presents a probabilistic motion forecasting model...
-          </div>
-          <div class="stream-meta article-metadata">
-            <div>
-              <span>Sergio Casas*, Cole Gulino*, Simon Suo*, Katie Luo, Renjie Liao, Raquel Urtasun</span>
-            </div>
-          </div>
-          <div class="btn-links">
-            <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://arxiv.org/abs/2007.12036" target="_blank" rel="noopener">PDF</a>
-            <a class="btn btn-outline-primary btn-page-header btn-sm js-cite-modal" data-filename="/~katieluo/publication/ilvm/cite.bib">Cite</a>
-            <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://youtu.be/dBOVZ2Tulp4" target="_blank" rel="noopener">Video</a>
-          </div>
-        </div>
-        <div class="ml-3">
-          <a href="/~katieluo/publication/ilvm/">
-            <img src="/~katieluo/publication/ilvm/featured_hu5c8637242a5d79c8abb3eb749750bfb1_75142_150x0_resize_lanczos_2.png" alt="Implicit Latent Variable Model for Scene-Consistent Motion Forecasting" loading="lazy">
-          </a>
-        </div>
-      </div>
-
-      <!-- Another Publication -->
-      <div class="media stream-item">
-        <div class="media-body">
-          <div class="section-subheading article-title mb-0 mt-0">
-            <a href="/~katieluo/publication/airl/">Learning robust rewards with adversarial inverse reinforcement learning</a>
-          </div>
-          <div class="article-style">
-            <i>ICLR 2018</i> <br> Introducing a practical adversarial inverse learning algorithm.
-          </div>
-          <div class="stream-meta article-metadata">
-            <div>
-              <span>Justin Fu, Katie Luo, Sergey Levine</span>
-            </div>
-          </div>
-          <div class="btn-links">
-            <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://arxiv.org/abs/1710.11248" target="_blank" rel="noopener">PDF</a>
-            <a class="btn btn-outline-primary btn-page-header btn-sm js-cite-modal" data-filename="/~katieluo/publication/airl/cite.bib">Cite</a>
-          </div>
-        </div>
-        <div class="ml-3">
-          <a href="/~katieluo/publication/airl/">
-            <img src="/~katieluo/publication/airl/featured_hue05cab983f06e54fff7a48eff7c6f990_154322_150x0_resize_lanczos_2.png" alt="Learning robust rewards with adversarial inverse reinforcement learning" loading="lazy">
-          </a>
-        </div>
-      </div>
-
+      <p>(* indicates equal contribution)</p>
     </div>
-  </section>
-
-  <!-- Research Experience Section -->
-  <section id="experience" class="home-section wg-experience">
-    <div class="container">
-      <div class="row">
-        <div class="section-heading col-12 col-lg-4 mb-3 mb-lg-0 d-flex flex-column align-items-center align-items-lg-start">
-          <h1 class="mb-0">Research</h1>
-          <p class="mt-1">Academic Labs</p>
-        </div>
-        <div class="col-12 col-lg-8">
-
-          <!-- Postdoc Experience -->
-          <div class="row experience">
-            <div class="col py-2">
-              <div class="card">
-                <div class="card-body">
-                  <div class="exp-title">Postdoctoral Researcher</div>
-                  <div class="exp-company"><a href="https://stanfordasl.github.io/" target="_blank">Autonomous Systems Lab (ASL), Stanford University</a></div>
-                  <div class="exp-meta">Aug 2024 – Present · Palo Alto, USA</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Graduate Researcher -->
-          <div class="row experience">
-            <div class="col py-2">
-              <div class="card">
-                <div class="card-body">
-                  <div class="exp-title">Graduate Student Researcher</div>
-                  <div class="exp-company"><a href="https://www.cs.cornell.edu/~kilian/students/students.html" target="_blank">Machine Learning at Cornell University</a></div>
-                  <div class="exp-meta">Aug 2020 – May 2025 · Ithaca, USA</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Visiting Research Experiences -->
-          <div class="row experience">
-            <div class="col py-2">
-              <div class="card">
-                <div class="card-body">
-                  <div class="exp-title">Visiting Student Researcher</div>
-                  <div class="exp-company"><a href="https://www.sydney.edu.au/engineering/our-research/robotics-and-intelligent-systems/australian-centre-for-robotics.html" target="_blank">Australian Centre for Robotics</a></div>
-                  <div class="exp-meta">Mar 2024 – May 2024 · Sydney, Australia</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="row experience">
-            <div class="col py-2">
-              <div class="card">
-                <div class="card-body">
-                  <div class="exp-title">Visiting Student Researcher</div>
-                  <div class="exp-company"><a href="https://di.ku.dk/ai-centre/" target="_blank">Pioneer Center for AI</a></div>
-                  <div class="exp-meta">Jun 2022 – Aug 2022 · Copenhagen, Denmark</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- AI Resident -->
-          <div class="row experience">
-            <div class="col py-2">
-              <div class="card">
-                <div class="card-body">
-                  <div class="exp-title">AI Resident</div>
-                  <div class="exp-company">Uber ATG (Aurora)</div>
-                  <div class="exp-meta">Jun 2019 – Jun 2020 · Toronto, Canada</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Student Researcher -->
-          <div class="row experience">
-            <div class="col py-2">
-              <div class="card">
-                <div class="card-body">
-                  <div class="exp-title">Student Researcher</div>
-                  <div class="exp-company"><a href="http://rail.eecs.berkeley.edu/" target="_blank">UC Berkeley Robotic and AI Learning Lab</a></div>
-                  <div class="exp-meta">Aug 2017 – Jun 2019 · Berkeley, USA</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
+    <div class="section-right">
+      <div class="publication">
+        <div class="publication-title">Awesome Paper on Multi-Modal Perception</div>
+        <div class="publication-authors">Qiyuan Wu*, John Doe*, Jane Smith</div>
+        <div class="publication-venue">NeurIPS 2024</div>
+      </div>
+      <div class="publication">
+        <div class="publication-title">Deep Reinforcement Learning for Robotics</div>
+        <div class="publication-authors">Qiyuan Wu, Alex Johnson</div>
+        <div class="publication-venue">ICRA 2023</div>
+      </div>
+      <div class="publication">
+        <div class="publication-title">Natural Language Processing with Transformers</div>
+        <div class="publication-authors">Qiyuan Wu, Emily Zhang</div>
+        <div class="publication-venue">ACL 2022</div>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- Industry Section -->
-  <section id="industry" class="home-section wg-experience">
-    <div class="container">
-      <div class="row">
-        <div class="section-heading col-12 col-lg-4 mb-3 mb-lg-0 d-flex flex-column align-items-center align-items-lg-start">
-          <h1 class="mb-0">Industry and Exchanges</h1>
-          <p class="mt-1">Featured Experiences</p>
-        </div>
-        <div class="col-12 col-lg-8">
-
-          <div class="row experience">
-            <div class="col py-2">
-              <div class="card">
-                <div class="card-body">
-                  <div class="exp-title">PhD Research Intern</div>
-                  <div class="exp-company"><a href="https://waymo.com/research/" target="_blank">Waymo – Perception Research</a></div>
-                  <div class="exp-meta">Jun 2024 – Oct 2024 · Mountain View, USA</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Add other industry experiences similarly -->
-
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Invited Talks Section -->
-  <section id="talks" class="home-section wg-pages">
-    <div class="container">
-      <div class="row">
-        <div class="section-heading col-12 col-lg-4 mb-3 mb-lg-0 d-flex flex-column align-items-center align-items-lg-start">
-          <h1 class="mb-0">Invited Talks</h1>
-        </div>
-        <div class="col-12 col-lg-8">
-
-          <div class="media stream-item">
-            <div class="media-body">
-              <div class="section-subheading article-title mb-0 mt-0">
-                <a href="/~katieluo/talk/leveraging-auxiliary-information-for-self-driving-perception-across-diverse-end-users/">Leveraging Auxiliary Information for Self-Driving Perception across Diverse End Users</a>
-              </div>
-              <div class="article-style">
-                Colloquium talk at Cornell University CS Ph.D. Students Colloquium.
-              </div>
-              <div class="stream-meta article-metadata">
-                <div>Dec 5, 2024 · Cornell University, New York</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Add other talks similarly -->
-
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="page-footer text-center mt-5">
-    <div class="container">
-      <p>© 2025 Katie Luo. Last Updated June, 2025.</p>
-      <p>Published with <a href="https://wowchemy.com/">Wowchemy</a>.</p>
-    </div>
-  </footer>
-
-  <!-- JS Scripts -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery
+</main>
+</body>
+</html>
