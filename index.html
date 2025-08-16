@@ -9,12 +9,12 @@
 </head>
 <body>
 
-  <!-- Header / Hero Section -->
+  <!-- Hero Section -->
   <header id="hero" class="home-section">
     <div class="container text-center">
       <h1>Katie Luo</h1>
       <p>Postdoctoral Researcher</p>
-      <img src="path-to-photo.jpg" alt="Katie Luo" loading="lazy" class="rounded-circle" width="150">
+      <img src="/~katieluo/images/photo.jpg" alt="Katie Luo" class="rounded-circle" loading="lazy" width="150">
       <div class="mt-2">
         <a href="#"><i class="fab fa-github me-2"></i></a>
         <a href="#"><i class="fab fa-linkedin me-2"></i></a>
@@ -29,27 +29,56 @@
     <div class="container">
       <h2>Publications</h2>
 
+      <!-- Example Publication -->
       <div class="media stream-item">
         <div class="media-body">
           <div class="section-subheading article-title mb-0 mt-0">
-            <a href="#">Paper Title</a>
+            <a href="/~katieluo/publication/ilvm/">Implicit Latent Variable Model for Scene-Consistent Motion Forecasting</a>
           </div>
           <div class="article-style">
-            <i>Conference/Journal, Year</i> <br> Brief description.
+            <i>ICCV 2021</i><br> This paper presents a probabilistic motion forecasting model...
           </div>
           <div class="stream-meta article-metadata">
             <div>
-              <span>Authors</span>
+              <span>Sergio Casas*, Cole Gulino*, Simon Suo*, Katie Luo, Renjie Liao, Raquel Urtasun</span>
             </div>
           </div>
           <div class="btn-links">
-            <a class="btn btn-outline-primary btn-page-header btn-sm" href="#">PDF</a>
-            <a class="btn btn-outline-primary btn-page-header btn-sm" href="#">Cite</a>
-            <a class="btn btn-outline-primary btn-page-header btn-sm" href="#">Video</a>
+            <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://arxiv.org/abs/2007.12036" target="_blank" rel="noopener">PDF</a>
+            <a class="btn btn-outline-primary btn-page-header btn-sm js-cite-modal" data-filename="/~katieluo/publication/ilvm/cite.bib">Cite</a>
+            <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://youtu.be/dBOVZ2Tulp4" target="_blank" rel="noopener">Video</a>
           </div>
         </div>
         <div class="ml-3">
-          <a href="#"><img src="path-to-thumbnail.png" alt="Paper Image" loading="lazy"></a>
+          <a href="/~katieluo/publication/ilvm/">
+            <img src="/~katieluo/publication/ilvm/featured_hu5c8637242a5d79c8abb3eb749750bfb1_75142_150x0_resize_lanczos_2.png" alt="Implicit Latent Variable Model for Scene-Consistent Motion Forecasting" loading="lazy">
+          </a>
+        </div>
+      </div>
+
+      <!-- Another Publication -->
+      <div class="media stream-item">
+        <div class="media-body">
+          <div class="section-subheading article-title mb-0 mt-0">
+            <a href="/~katieluo/publication/airl/">Learning robust rewards with adversarial inverse reinforcement learning</a>
+          </div>
+          <div class="article-style">
+            <i>ICLR 2018</i> <br> Introducing a practical adversarial inverse learning algorithm.
+          </div>
+          <div class="stream-meta article-metadata">
+            <div>
+              <span>Justin Fu, Katie Luo, Sergey Levine</span>
+            </div>
+          </div>
+          <div class="btn-links">
+            <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://arxiv.org/abs/1710.11248" target="_blank" rel="noopener">PDF</a>
+            <a class="btn btn-outline-primary btn-page-header btn-sm js-cite-modal" data-filename="/~katieluo/publication/airl/cite.bib">Cite</a>
+          </div>
+        </div>
+        <div class="ml-3">
+          <a href="/~katieluo/publication/airl/">
+            <img src="/~katieluo/publication/airl/featured_hue05cab983f06e54fff7a48eff7c6f990_154322_150x0_resize_lanczos_2.png" alt="Learning robust rewards with adversarial inverse reinforcement learning" loading="lazy">
+          </a>
         </div>
       </div>
 
@@ -59,53 +88,151 @@
   <!-- Research Experience Section -->
   <section id="experience" class="home-section wg-experience">
     <div class="container">
-      <h2>Research</h2>
-      <div class="experience-card">
-        <div class="card">
-          <div class="card-body">
-            <div class="exp-title">Postdoctoral Researcher</div>
-            <div class="exp-company"><a href="https://stanfordasl.github.io/" target="_blank">Autonomous Systems Lab (ASL), Stanford</a></div>
-            <div class="exp-meta">Aug 2024 – Present · Palo Alto, USA</div>
+      <div class="row">
+        <div class="section-heading col-12 col-lg-4 mb-3 mb-lg-0 d-flex flex-column align-items-center align-items-lg-start">
+          <h1 class="mb-0">Research</h1>
+          <p class="mt-1">Academic Labs</p>
+        </div>
+        <div class="col-12 col-lg-8">
+
+          <!-- Postdoc Experience -->
+          <div class="row experience">
+            <div class="col py-2">
+              <div class="card">
+                <div class="card-body">
+                  <div class="exp-title">Postdoctoral Researcher</div>
+                  <div class="exp-company"><a href="https://stanfordasl.github.io/" target="_blank">Autonomous Systems Lab (ASL), Stanford University</a></div>
+                  <div class="exp-meta">Aug 2024 – Present · Palo Alto, USA</div>
+                </div>
+              </div>
+            </div>
           </div>
+
+          <!-- Graduate Researcher -->
+          <div class="row experience">
+            <div class="col py-2">
+              <div class="card">
+                <div class="card-body">
+                  <div class="exp-title">Graduate Student Researcher</div>
+                  <div class="exp-company"><a href="https://www.cs.cornell.edu/~kilian/students/students.html" target="_blank">Machine Learning at Cornell University</a></div>
+                  <div class="exp-meta">Aug 2020 – May 2025 · Ithaca, USA</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Visiting Research Experiences -->
+          <div class="row experience">
+            <div class="col py-2">
+              <div class="card">
+                <div class="card-body">
+                  <div class="exp-title">Visiting Student Researcher</div>
+                  <div class="exp-company"><a href="https://www.sydney.edu.au/engineering/our-research/robotics-and-intelligent-systems/australian-centre-for-robotics.html" target="_blank">Australian Centre for Robotics</a></div>
+                  <div class="exp-meta">Mar 2024 – May 2024 · Sydney, Australia</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row experience">
+            <div class="col py-2">
+              <div class="card">
+                <div class="card-body">
+                  <div class="exp-title">Visiting Student Researcher</div>
+                  <div class="exp-company"><a href="https://di.ku.dk/ai-centre/" target="_blank">Pioneer Center for AI</a></div>
+                  <div class="exp-meta">Jun 2022 – Aug 2022 · Copenhagen, Denmark</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- AI Resident -->
+          <div class="row experience">
+            <div class="col py-2">
+              <div class="card">
+                <div class="card-body">
+                  <div class="exp-title">AI Resident</div>
+                  <div class="exp-company">Uber ATG (Aurora)</div>
+                  <div class="exp-meta">Jun 2019 – Jun 2020 · Toronto, Canada</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Student Researcher -->
+          <div class="row experience">
+            <div class="col py-2">
+              <div class="card">
+                <div class="card-body">
+                  <div class="exp-title">Student Researcher</div>
+                  <div class="exp-company"><a href="http://rail.eecs.berkeley.edu/" target="_blank">UC Berkeley Robotic and AI Learning Lab</a></div>
+                  <div class="exp-meta">Aug 2017 – Jun 2019 · Berkeley, USA</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
-      <!-- Repeat experience-card for other positions -->
     </div>
   </section>
 
   <!-- Industry Section -->
   <section id="industry" class="home-section wg-experience">
     <div class="container">
-      <h2>Industry and Exchanges</h2>
-      <div class="experience-card">
-        <div class="card">
-          <div class="card-body">
-            <div class="exp-title">PhD Research Intern</div>
-            <div class="exp-company"><a href="https://waymo.com/research/" target="_blank">Waymo – Perception Research</a></div>
-            <div class="exp-meta">Jun 2024 – Oct 2024 · Mountain View, USA</div>
+      <div class="row">
+        <div class="section-heading col-12 col-lg-4 mb-3 mb-lg-0 d-flex flex-column align-items-center align-items-lg-start">
+          <h1 class="mb-0">Industry and Exchanges</h1>
+          <p class="mt-1">Featured Experiences</p>
+        </div>
+        <div class="col-12 col-lg-8">
+
+          <div class="row experience">
+            <div class="col py-2">
+              <div class="card">
+                <div class="card-body">
+                  <div class="exp-title">PhD Research Intern</div>
+                  <div class="exp-company"><a href="https://waymo.com/research/" target="_blank">Waymo – Perception Research</a></div>
+                  <div class="exp-meta">Jun 2024 – Oct 2024 · Mountain View, USA</div>
+                </div>
+              </div>
+            </div>
           </div>
+
+          <!-- Add other industry experiences similarly -->
+
         </div>
       </div>
-      <!-- Repeat for other industry experiences -->
     </div>
   </section>
 
   <!-- Invited Talks Section -->
   <section id="talks" class="home-section wg-pages">
     <div class="container">
-      <h2>Invited Talks</h2>
-      <div class="media stream-item">
-        <div class="media-body">
-          <div class="section-subheading article-title mb-0 mt-0">
-            <a href="#">Talk Title</a>
+      <div class="row">
+        <div class="section-heading col-12 col-lg-4 mb-3 mb-lg-0 d-flex flex-column align-items-center align-items-lg-start">
+          <h1 class="mb-0">Invited Talks</h1>
+        </div>
+        <div class="col-12 col-lg-8">
+
+          <div class="media stream-item">
+            <div class="media-body">
+              <div class="section-subheading article-title mb-0 mt-0">
+                <a href="/~katieluo/talk/leveraging-auxiliary-information-for-self-driving-perception-across-diverse-end-users/">Leveraging Auxiliary Information for Self-Driving Perception across Diverse End Users</a>
+              </div>
+              <div class="article-style">
+                Colloquium talk at Cornell University CS Ph.D. Students Colloquium.
+              </div>
+              <div class="stream-meta article-metadata">
+                <div>Dec 5, 2024 · Cornell University, New York</div>
+              </div>
+            </div>
           </div>
-          <div class="article-style">Brief description of the talk.</div>
-          <div class="stream-meta article-metadata">
-            <div>Dec 5, 2024 · Cornell University, New York</div>
-          </div>
+
+          <!-- Add other talks similarly -->
+
         </div>
       </div>
-      <!-- Repeat talk items as needed -->
     </div>
   </section>
 
@@ -118,8 +245,4 @@
   </footer>
 
   <!-- JS Scripts -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
-  <script src="/~katieluo/en/js/wowchemy.min.c01837cb419cd1ceb2271db5210fa3dc.js"></script>
-</body>
-</html>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery
