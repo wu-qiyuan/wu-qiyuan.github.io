@@ -28,6 +28,7 @@
             color: var(--text-color);
             background: var(--background);
             font-size: 16px;
+            transition: background 0.3s, color 0.3s;
         }
 
         .site-header {
@@ -43,8 +44,8 @@
             margin: 0 auto;
             padding: 1rem 2rem;
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            gap: 1rem;
         }
 
         .navbar-brand {
@@ -54,10 +55,11 @@
             text-decoration: none;
         }
 
-        .navbar-nav {
+        .navbar-nav.left-nav {
             display: flex;
             list-style: none;
             gap: 2rem;
+            margin-left: 2rem;
         }
 
         .nav-link {
@@ -71,10 +73,17 @@
             color: var(--primary-color);
         }
 
+        .mode-toggle {
+            margin-left: auto;
+            background: none;
+            border: none;
+            font-size: 1.25rem;
+            cursor: pointer;
+        }
+
         .page-wrapper {
             max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
+            margin: 0 100px;
         }
 
         .page-hero {
@@ -246,13 +255,28 @@
             margin-bottom: 0.5rem;
         }
 
+        /* Dark mode */
+        body.dark-mode {
+            --primary-color: #90caf9;
+            --text-color: #e0e0e0;
+            --text-color-light: #aaa;
+            --background: #121212;
+            --border-color: #333;
+            background: var(--background);
+            color: var(--text-color);
+        }
+
+        body.dark-mode a {
+            color: var(--primary-color);
+        }
+
         @media (max-width: 768px) {
             .hero-container {
                 grid-template-columns: 1fr;
                 text-align: center;
                 gap: 2rem;
             }
-            
+
             .avatar {
                 width: 200px;
                 height: 200px;
@@ -277,17 +301,18 @@
 <body>
     <header class="site-header">
         <nav class="navbar">
-            <a href="#" class="navbar-brand">Katie Luo</a>
-            <ul class="navbar-nav">
+            <a href="#" class="navbar-brand">Qiyuan Wu</a>
+            <ul class="navbar-nav left-nav">
                 <li><a href="#about" class="nav-link">Home</a></li>
                 <li><a href="#publications" class="nav-link">Publications</a></li>
                 <li><a href="#experience" class="nav-link">Experience</a></li>
             </ul>
+            <button class="mode-toggle">🌙</button>
         </nav>
     </header>
 
     <main class="page-wrapper">
-        <div class="page-hero">
+        <div class="page-hero" id="about">
             <div class="hero-container">
                 <div class="avatar-section">
                     <img src="img/profile.png" alt="Qiyuan Wu" class="avatar">
@@ -296,9 +321,7 @@
                     <h1 class="hero-title">Qiyuan Wu</h1>
                     <div class="hero-lead">Postdoctoral Researcher</div>
                     <p>I am a PhD student at the Cornell University Autonomous Systems Lab, working with Prof. Marco Pavone. I obtained my Ph.D. at Cornell University, advised by Prof. Kilian Q. Weinberger and Prof. Bharath Hariharan. My research interest lies in visual understanding of the world, including 3D perception and multi-modal learning, combining visual data with other sensory inputs to enhance environmental understanding.</p>
-                    
                     <p>I am fortunate to have been supported by a Cornell University Fellowship, an Nvidia Graduate Student Fellowship, and an American Association of University Women (AAUW) Dissertation Fellowship Award.</p>
-                    
                     <p>Before joining Cornell University, I had the pleasure of working on a variety of topics including applied machine learning, deep reinforcement learning, and applications of natural language processing. View my professional summary <a href="#">here</a>.</p>
                 </div>
             </div>
@@ -309,11 +332,9 @@
                 <h2 class="section-heading">News</h2>
                 <div class="news-container">
                     <div class="news-date">[Oct. 2024]</div>
-                    <div class="news-content">Giving a talk at the</div>
-                    
+                    <div class="news-content">Giving a talk at the …</div>
                     <div class="news-date">[Sep. 2024]</div>
                     <div class="news-content">Our paper on multi-modal learning accepted to NeurIPS 2024</div>
-                    
                     <div class="news-date">[Aug. 2024]</div>
                     <div class="news-content">Started postdoc position at Stanford University</div>
                 </div>
@@ -337,19 +358,18 @@
                 </ul>
             </div>
 
-            <div class="section">
+            <div class="section" id="publications">
                 <h2 class="section-heading">Publications</h2>
                 <div class="publications-note">(* denotes equal contribution)</div>
                 <div class="publications-scholar">For an up-to-date list of publications, check out my <a href="#">Google Scholar</a>.</div>
             </div>
 
-            <div class="section">
+            <div class="section" id="experience">
                 <h2 class="section-heading">Experience</h2>
                 <div class="experience-section">
                     <div class="experience-category">Academic Labs</div>
                     <div class="experience-content">Stanford University ASL - Postdoctoral Researcher (2024-Present)</div>
                 </div>
-                
                 <div class="experience-section">
                     <div class="experience-category">A Couple of Featured Experiences</div>
                     <div class="experience-content">Industry research collaborations and internships in machine learning and computer vision.</div>
@@ -360,10 +380,16 @@
 
     <footer class="site-footer">
         <div class="footer-content">
-            <p>© 2025 Katie Luo. Last Updated June, 2025</p>
-            <p>Published with Wowchemy — the free, open source website builder that empowers creators</p>
+            <p>© 2025 Qiyuan Wu. Last Updated August, 2025</p>
         </div>
     </footer>
+
+    <script>
+        const toggle = document.querySelector('.mode-toggle');
+        toggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            toggle.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+        });
+    </script>
 </body>
 </html>
-
