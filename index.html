@@ -153,18 +153,22 @@ body {
     border-bottom: 2px solid var(--primary-color);
 }
 
-/* News section */
+/* News section aligned like About Me */
 .news-container {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 1rem 2rem;
-    align-items: baseline;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.news-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
 }
 
 .news-date {
     font-weight: 600;
     color: var(--text-color);
-    white-space: nowrap;
     font-size: 0.95rem;
 }
 
@@ -172,6 +176,63 @@ body {
     font-size: 1rem;
     line-height: 1.6;
     color: var(--text-color);
+}
+
+.education-list {
+    list-style: none;
+}
+
+.education-item {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.education-degree {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.education-institution {
+    font-size: 1rem;
+    color: var(--text-color-light);
+}
+
+.publications-note {
+    font-style: italic;
+    color: var(--text-color-light);
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.publications-scholar {
+    margin-bottom: 2rem;
+    font-size: 1rem;
+}
+
+.publications-scholar a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.experience-section {
+    margin-bottom: 3rem;
+}
+
+.experience-category {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.experience-content {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-color);
+    margin-bottom: 2rem;
 }
 
 .site-footer {
@@ -233,12 +294,7 @@ body.dark-mode a {
     }
 
     .news-container {
-        grid-template-columns: 1fr;
         gap: 0.5rem;
-    }
-
-    .news-date {
-        margin-bottom: 0.25rem;
     }
 }
 </style>
@@ -275,17 +331,56 @@ body.dark-mode a {
     <div class="section" id="news">
         <h2 class="section-heading">News</h2>
         <div class="news-container">
-            <div class="news-date">[Oct. 2024]</div>
-            <div class="news-content">Gave a talk at …</div>
-            <div class="news-date">[Sep. 2024]</div>
-            <div class="news-content">Paper accepted at NeurIPS 2024</div>
-            <div class="news-date">[Aug. 2024]</div>
-            <div class="news-content">Started postdoc position at Stanford University</div>
+            <div class="news-item">
+                <div class="news-date">[Oct. 2024]</div>
+                <div class="news-content">Gave a talk at …</div>
+            </div>
+            <div class="news-item">
+                <div class="news-date">[Sep. 2024]</div>
+                <div class="news-content">Paper accepted at NeurIPS 2024</div>
+            </div>
+            <div class="news-item">
+                <div class="news-date">[Aug. 2024]</div>
+                <div class="news-content">Started postdoc position at Stanford University</div>
+            </div>
         </div>
     </div>
 
-    <!-- Publications and Experience sections remain the same as your current file -->
+    <div class="section" id="education">
+        <h2 class="section-heading">Education</h2>
+        <ul class="education-list">
+            <li class="education-item">
+                <div class="education-degree">PhD in Computer Science, 2020 - 2025</div>
+                <div class="education-institution">Cornell University</div>
+            </li>
+            <li class="education-item">
+                <div class="education-degree">MS in Elec. Eng. and Computer Sciences, 2018 - 2019</div>
+                <div class="education-institution">University of California, Berkeley</div>
+            </li>
+            <li class="education-item">
+                <div class="education-degree">BSc in Elec. Eng. and Computer Sciences, 2015 - 2018</div>
+                <div class="education-institution">University of California, Berkeley</div>
+            </li>
+        </ul>
+    </div>
 
+    <div class="section" id="publications">
+        <h2 class="section-heading">Publications</h2>
+        <div class="publications-note">(* denotes equal contribution)</div>
+        <div class="publications-scholar">For an up-to-date list of publications, check out my <a href="#">Google Scholar</a>.</div>
+    </div>
+
+    <div class="section" id="experience">
+        <h2 class="section-heading">Experience</h2>
+        <div class="experience-section">
+            <div class="experience-category">Academic Labs</div>
+            <div class="experience-content">Stanford University ASL - Postdoctoral Researcher (2024-Present)</div>
+        </div>
+        <div class="experience-section">
+            <div class="experience-category">A Couple of Featured Experiences</div>
+            <div class="experience-content">Industry research collaborations and internships in machine learning and computer vision.</div>
+        </div>
+    </div>
 </main>
 
 <footer class="site-footer">
