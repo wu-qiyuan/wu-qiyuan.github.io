@@ -1,252 +1,318 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title> Qiyuan Personal Page</title>
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta content="Qiyuan" name="keywords">
-        <meta content="Qiyuan" name="description">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-        <!-- Favicon -->
-        <link href="img/favicon.ico" rel="icon">
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+        }
 
-        <!-- Google Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:300;400;600;700;800&display=swap" rel="stylesheet">
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-        <!-- Font Awesome -->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+        .hero-section {
+            padding: 60px 0 40px;
+        }
 
-        <!-- Customized Bootstrap Stylesheet -->
-        <link href="css/style.css" rel="stylesheet">
-        
-        <!-- W3 type -->
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    </head>
+        .hero-content {
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+        }
 
-    <body>
-        <div class="wrapper">
-            <div class="sidebar">
-                               
-                <div class="sidebar-text d-flex flex-column h-100 justify-content-start text-center">
-                    <img class="mx-auto d-block w-75 bg-primary img-fluid rounded-circle mb-4 p-3" src="img/profile.png" alt="Image">
-                    <h1 class="font-weight-bold">Qiyuan Wu</h1>
-                    <p class="mb-4">
-                        <font size="+0.3">Student at the Johns Hopkins University</font>
-                    </p>
-                    <div class="d-flex justify-content-center mb-5">
-                        <!--
-                        <a class="btn btn-outline-primary mr-2" href="#"><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-outline-primary mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                        -->
-                        <a class="btn btn-outline-primary mr-2" href="https://www.linkedin.com/in/qiyuan265/"><i class="fab fa-linkedin-in"></i></a>
-                        <a class="btn btn-outline-primary mr-2" href="https://github.com/wu-qiyuan"><i class="fab fa-github"></i></a>
-                    </div>
-                
-                    <div class="d-block justify-content-center mb-5">
-                        <a href="index.html" class="w3-bar-item w3-button"><font size="+1.3">Home</font></a><br>
-                        <!-- <a href="about.html" class="w3-bar-item w3-button"><font size="+1.3">About</font></a><br> -->
-                        <a href="publications.html" class="w3-bar-item w3-button"><font size="+1.3">Publications</font></a><br>
-                        <a href="projects.html" class="nav-item nav-link"><font size="+1.3">Research</font></a>
-                        <!--
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><font size="+1.3">Projects</font></a>
-                            <div class="dropdown-menu">
-                                <a href="projects.html" class="dropdown-item"><font size="+1.3">Research</font></a>
-                                <a href="posters.html" class="dropdown-item"><font size="+1.3">Playground</font></a>
-                            </div>
-                        </div>
-                        -->
-                    </div>
-                </div>
-                <div class="sidebar-icon d-flex flex-column h-100 justify-content-center text-right">
-                    <i class="fas fa-2x fa-angle-double-right text-primary"></i>
+        .avatar {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-text h1 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .hero-text a {
+            color: #007acc;
+            text-decoration: none;
+        }
+
+        .hero-text a:hover {
+            text-decoration: underline;
+        }
+
+        .section {
+            padding: 40px 0;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 300;
+            margin-bottom: 30px;
+            color: #2c3e50;
+            border-bottom: 2px solid #007acc;
+            padding-bottom: 10px;
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 15px 30px;
+            align-items: start;
+        }
+
+        .news-date {
+            font-weight: 600;
+            color: #666;
+            white-space: nowrap;
+        }
+
+        .news-content {
+            line-height: 1.6;
+        }
+
+        .education-item {
+            margin-bottom: 25px;
+        }
+
+        .degree {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .institution {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        .publications-list {
+            list-style: none;
+        }
+
+        .publication-item {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #007acc;
+        }
+
+        .pub-title {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 8px;
+            font-size: 1.05rem;
+        }
+
+        .pub-authors {
+            color: #666;
+            margin-bottom: 5px;
+            font-size: 0.95rem;
+        }
+
+        .pub-venue {
+            color: #007acc;
+            font-weight: 500;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .pub-description {
+            color: #555;
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+
+        .experience-item {
+            margin-bottom: 30px;
+        }
+
+        .experience-title {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .experience-details {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .footer {
+            padding: 40px 0;
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+            border-top: 1px solid #eee;
+            margin-top: 60px;
+        }
+
+        .note {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 20px;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .avatar {
+                margin: 0 auto 20px;
+                width: 150px;
+                height: 150px;
+            }
+
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .news-grid {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            .news-date {
+                font-weight: bold;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <section class="hero-section">
+            <div class="hero-content">
+                <img src="https://via.placeholder.com/200x200/007acc/ffffff?text=Your+Photo" alt="Your Name" class="avatar">
+                <div class="hero-text">
+                    <h1>Your Name</h1>
+                    <p>I am a Postdoctoral Researcher at the Stanford University ASL group, working with Prof. Marco Pavone. I obtained my Ph.D. at Cornell University, advised by Prof. Kilian Q. Weinberger and Prof. Bharath Hariharan. My research interest lies in visual understanding of the world, including 3D perception and multi-modal learning, combining visual data with other sensory inputs to enhance environmental understanding.</p>
+                    
+                    <p>I am fortunate to have been supported by a Cornell University Fellowship, an Nvidia Graduate Student Fellowship, and an American Association of University Women (AAUW) Dissertation Fellowship Award.</p>
+                    
+                    <p>Before joining Cornell University, I had the pleasure of working on a variety of topics including applied machine learning, deep reinforcement learning, and applications of natural language processing. View my professional summary <a href="#" target="_blank">here</a>.</p>
                 </div>
             </div>
-            <div class="content">
-                <!-- Navbar Start -->
-                <!--
-                <div class="container p-0">
-                    <nav class="navbar navbar-expand-lg bg-secondary navbar-dark">
-                        <a href="" class="navbar-brand d-block d-lg-none">Navigation</a>
-                        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-                            <div class="navbar-nav m-auto">
-                                <a href="index.html" class="nav-item nav-link active">Home</a>
-                                <a href="about.html" class="nav-item nav-link active">About</a>
-                                <a href="publications.html" class="nav-item nav-link">Publications</a>
-                                <a href="projects.html" class="nav-item nav-link">Research Projects</a>
-                                <div class="nav-item dropdown">
-                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Projects</a>
-                                    <div class="dropdown-menu">
-                                        <a href="projects.html" class="dropdown-item">Research</a>
-                                        <a href="posters.html" class="dropdown-item">Playground</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </nav>
-                </div>
-                -->
-                <!-- Navbar End -->
-                
-                <!-- Carousel Start -->
-                <div class="container p-0">
-                    <div id="blog-carousel" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img class="w-100" src="img/IMERSE_2021_photo.jpg" alt="Image">
-                                <div class="carousel-caption d-flex flex-column align-items-center justify-content-end">
-                                    <h2 class="mb-3 text-white font-weight-bold">2021@JHU</h2>
-                                    <!--
-                                    <div class="d-flex text-white">
-                                        <small class="mr-2"><i class="fa fa-calendar-alt"></i> 01-Jan-2045</small>
-                                        <small class="mr-2"><i class="fa fa-folder"></i> Web Design</small>
-                                        <small class="mr-2"><i class="fa fa-comments"></i> 15 Comments</small>
-                                    </div>
-                                    <a href="" class="btn btn-lg btn-outline-light mt-4">Read More</a>
-                                    -->
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <img class="w-100" src="img/ETRL_photo.jpg" alt="Image">
-                                <div class="carousel-caption d-flex flex-column align-items-center justify-content-end">
-                                    <h2 class="text-white font-weight-bold">2019@UIUC</h2>
-                                    <!--
-                                    <div class="d-flex">
-                                        <small class="mr-2"><i class="fa fa-calendar-alt"></i> 01-Jan-2045</small>
-                                        <small class="mr-2"><i class="fa fa-folder"></i> Web Design</small>
-                                        <small class="mr-2"><i class="fa fa-comments"></i> 15 Comments</small>
-                                    </div>
-                                    <a href="" class="btn btn-lg btn-outline-light mt-4">Read More</a>
-                                    -->
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <img class="w-100" src="img/SJTU_photo.jpg" alt="Image">
-                                <div class="carousel-caption d-flex flex-column align-items-center justify-content-end">
-                                    <h2 class="text-white font-weight-bold">2019@SJTU</h2>
-                                    <!--
-                                    <div class="d-flex">
-                                        <small class="mr-2"><i class="fa fa-calendar-alt"></i> 01-Jan-2045</small>
-                                        <small class="mr-2"><i class="fa fa-folder"></i> Web Design</small>
-                                        <small class="mr-2"><i class="fa fa-comments"></i> 15 Comments</small>
-                                    </div>
-                                    <a href="" class="btn btn-lg btn-outline-light mt-4">Read More</a>
-                                    -->
-                                </div>
-                            </div>
-                        </div>
-                        <a class="carousel-control-prev" href="#blog-carousel" data-slide="prev">
-                            <span class="carousel-control-prev-icon"></span>
-                        </a>
-                        <a class="carousel-control-next" href="#blog-carousel" data-slide="next">
-                            <span class="carousel-control-next-icon"></span>
-                        </a>
-                    </div>
-                </div>
-                <!-- Carousel End -->
-                
-                
-                <!-- Blog List Start
-                <div class="container bg-white pt-5">
-                    <div class="row blog-item px-3 pb-5">
-                        <div class="col-md-5">
-                            <img class="img-fluid mb-4 mb-md-0" src="img/blog-1.jpg" alt="Image">
-                        </div>
-                        <div class="col-md-7">
-                            <h3 class="mt-md-4 px-md-3 mb-2 py-2 bg-white font-weight-bold">Lorem ipsum dolor sit amet</h3>
-                            <div class="d-flex mb-3">
-                                <small class="mr-2 text-muted"><i class="fa fa-calendar-alt"></i> 01-Jan-2045</small>
-                                <small class="mr-2 text-muted"><i class="fa fa-folder"></i> Web Design</small>
-                                <small class="mr-2 text-muted"><i class="fa fa-comments"></i> 15 Comments</small>
-                            </div>
-                            <p>
-                                Project1
-                            </p>
-                            <a class="btn btn-link p-0" href="">Read More <i class="fa fa-angle-right"></i></a>
-                        </div>
-                    </div>
-                    <div class="row blog-item px-3 pb-5">
-                        <div class="col-md-5">
-                            <img class="img-fluid mb-4 mb-md-0" src="img/blog-2.jpg" alt="Image">
-                        </div>
-                        <div class="col-md-7">
-                            <h3 class="mt-md-4 px-md-3 mb-2 py-2 bg-white font-weight-bold">Lorem ipsum dolor sit amet</h3>
-                            <div class="d-flex mb-3">
-                                <small class="mr-2 text-muted"><i class="fa fa-calendar-alt"></i> 01-Jan-2045</small>
-                                <small class="mr-2 text-muted"><i class="fa fa-folder"></i> Web Design</small>
-                                <small class="mr-2 text-muted"><i class="fa fa-comments"></i> 15 Comments</small>
-                            </div>
-                            <p>
-                                Project2
-                            </p>
-                            <a class="btn btn-link p-0" href="">Read More <i class="fa fa-angle-right"></i></a>
-                        </div>
-                    </div>
-                    <div class="row blog-item px-3 pb-5">
-                        <div class="col-md-5">
-                            <img class="img-fluid mb-4 mb-md-0" src="img/blog-3.jpg" alt="Image">
-                        </div>
-                        <div class="col-md-7">
-                            <h3 class="mt-md-4 px-md-3 mb-2 py-2 bg-white font-weight-bold">Lorem ipsum dolor sit amet</h3>
-                            <div class="d-flex mb-3">
-                                <small class="mr-2 text-muted"><i class="fa fa-calendar-alt"></i> 01-Jan-2045</small>
-                                <small class="mr-2 text-muted"><i class="fa fa-folder"></i> Web Design</small>
-                                <small class="mr-2 text-muted"><i class="fa fa-comments"></i> 15 Comments</small>
-                            </div>
-                            <p>
-                                Project2
-                            </p>
-                            <a class="btn btn-link p-0" href="">Read More <i class="fa fa-angle-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                Blog List End -->
+        </section>
 
+        <section class="section">
+            <h2 class="section-title">News</h2>
+            <div class="news-grid">
+                <div class="news-date">[Oct. 2024]</div>
+                <div class="news-content">Giving a talk at the Conference on Computer Vision and Pattern Recognition.</div>
                 
-                <!-- Subscribe Start
-                <div class="container py-5 px-4 bg-secondary text-center">
-                    <h1 class="text-white font-weight-bold">Subscribe My Newsletter</h1>
-                    <p class="text-white">Subscribe and get my latest article in your inbox</p>
-                    <form class="form-inline justify-content-center">
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Your Email">
-                            <div class="input-group-append">
-                              <button class="btn btn-primary" type="submit">Subscribe</button>
-                            </div>
-                          </div>
-                    </form>
-                </div>
-                Subscribe End -->
+                <div class="news-date">[Sep. 2024]</div>
+                <div class="news-content">Our paper on 3D perception has been accepted to NeurIPS 2024!</div>
                 
+                <div class="news-date">[Aug. 2024]</div>
+                <div class="news-content">Started my postdoc position at Stanford University.</div>
                 
-                <!-- Footer Start -->
-                <div class="container py-4 bg-secondary text-center">
-                    <p class="m-0 text-white">
-                        &copy; <a class="text-white font-weight-bold" href="#">Wu,Qiyuan</a>. All Rights Reserved. Designed by <a class="text-white font-weight-bold" href="https://htmlcodex.com">HTML Codex</a>
-                    </p>
-                </div>
-                <!-- Footer End -->
+                <div class="news-date">[June 2024]</div>
+                <div class="news-content">Successfully defended my PhD thesis!</div>
             </div>
-        </div>
-        
-        <!-- Back to Top -->
-        <a href="#" class="back-to-top"><i class="fa fa-angle-double-up"></i></a>
-        
-        <!-- JavaScript Libraries -->
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-        <script src="lib/easing/easing.min.js"></script>
-        <script src="lib/waypoints/waypoints.min.js"></script>
+        </section>
 
-        <!-- Contact Javascript File -->
-        <script src="mail/jqBootstrapValidation.min.js"></script>
-        <script src="mail/contact.js"></script>
+        <section class="section">
+            <h2 class="section-title">Education</h2>
+            <div class="education-item">
+                <div class="degree">PhD in Computer Science, 2020 - 2025</div>
+                <div class="institution">Cornell University</div>
+            </div>
+            <div class="education-item">
+                <div class="degree">MS in Elec. Eng. and Computer Sciences, 2018 - 2019</div>
+                <div class="institution">University of California, Berkeley</div>
+            </div>
+            <div class="education-item">
+                <div class="degree">BSc in Elec. Eng. and Computer Sciences, 2015 - 2018</div>
+                <div class="institution">University of California, Berkeley</div>
+            </div>
+        </section>
 
-        <!-- Template Javascript -->
-        <script src="js/main.js"></script>
-    </body>
+        <section class="section">
+            <h2 class="section-title">Publications</h2>
+            <div class="note">(* denotes equal contribution)</div>
+            <div class="note">For an up-to-date list of publications, check out my <a href="#" target="_blank">Google Scholar</a>.</div>
+            
+            <ul class="publications-list">
+                <li class="publication-item">
+                    <div class="pub-title">Multi-Modal Learning for Autonomous Driving</div>
+                    <div class="pub-authors">Your Name*, Collaborator A*, Collaborator B, Advisor Name</div>
+                    <div class="pub-venue">ECCV 2024 (Oral)</div>
+                    <div class="pub-description">Investigating positional embedding artifacts in ViTs, and denosing them.</div>
+                </li>
+                
+                <li class="publication-item">
+                    <div class="pub-title">3D Perception with Point Cloud Data</div>
+                    <div class="pub-authors">Collaborator C*, Your Name*, Collaborator D, Collaborator E, Advisor Name</div>
+                    <div class="pub-venue">ICRA 2024</div>
+                    <div class="pub-description">The first work to investigate how to leverage standard definition maps to augment lane topology reasoning.</div>
+                </li>
+                
+                <li class="publication-item">
+                    <div class="pub-title">Deep Learning for Visual Understanding</div>
+                    <div class="pub-authors">Your Name, Collaborator F, Collaborator G, Advisor Name</div>
+                    <div class="pub-venue">ICCV 2023</div>
+                    <div class="pub-description">A novel approach to combining visual data with other sensory inputs for enhanced environmental understanding.</div>
+                </li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Experience</h2>
+            
+            <div class="experience-item">
+                <div class="experience-title">Academic Labs</div>
+                <div class="experience-details">
+                    Stanford University ASL - Postdoctoral Researcher (2024-Present)<br>
+                    Cornell University - Graduate Research Assistant (2020-2024)
+                </div>
+            </div>
+            
+            <div class="experience-item">
+                <div class="experience-title">A Couple of Featured Experiences</div>
+                <div class="experience-details">
+                    • AI Research Intern at Major Tech Company (Summer 2023)<br>
+                    • Research Collaboration with Industry Partners (2022-2023)<br>
+                    • Teaching Assistant for Machine Learning Courses (2021-2022)
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2025 Your Name. Last Updated June, 2025</p>
+        <p>Published with Wowchemy — the free, open source website builder that empowers creators</p>
+    </footer>
+</body>
 </html>
