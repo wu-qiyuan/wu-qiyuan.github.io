@@ -21,6 +21,55 @@
       line-height: 1.6;
     }
 
+    .site-header {
+        background: var(--header-bg);
+        border-bottom: 1px solid var(--border-color);
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
+    
+    .navbar {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 1rem 2rem;
+        display: flex;
+        align-items: center;
+    }
+    
+    .navbar-brand {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: var(--text-color);
+        text-decoration: none;
+    }
+    
+    .navbar-nav.left-nav {
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+        margin-left: 2rem;
+    }
+    
+    .nav-link {
+        color: var(--text-color);
+        text-decoration: none;
+        font-weight: 400;
+        transition: color 0.3s ease;
+    }
+    
+    .nav-link:hover {
+        color: var(--primary-color);
+    }
+    
+    .mode-toggle {
+        margin-left: auto;
+        background: none;
+        border: none;
+        font-size: 1.25rem;
+        cursor: pointer;
+    }
+
     .page-wrapper {
       max-width: 1000px;
       margin: auto;
@@ -241,6 +290,7 @@
 </main>
 </body>
 </html>
+
 
 
 
