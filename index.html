@@ -21,50 +21,49 @@
       line-height: 1.6;
     }
 
+    /* ---------- Header ---------- */
     .site-header {
         background-color: #faf8f3;
         border-bottom: 1px solid #ddd;
         position: sticky;
         top: 0;
         z-index: 10;
-        padding: 0.5rem 0;
+        padding: 0.5rem 20px;
+        box-sizing: border-box;
     }
-
-    /* Navbar inside container for consistent width */
+    
     .navbar {
         max-width: 1000px;
         margin: 0 auto;
-        padding: 0;
         display: flex;
         align-items: center;
-        box-sizing: border-box;
     }
-
+    
     .navbar-brand {
         font-size: 1.25rem;
         font-weight: 600;
         color: var(--text-color);
         text-decoration: none;
     }
-
+    
     .navbar-nav.left-nav {
         display: flex;
         list-style: none;
         gap: 2rem;
         margin-left: 2rem;
     }
-
+    
     .nav-link {
         color: var(--text-color);
         text-decoration: none;
         font-weight: 400;
         transition: color 0.3s ease;
     }
-
+    
     .nav-link:hover {
         color: var(--primary-color);
     }
-
+    
     .mode-toggle {
         margin-left: auto;
         background: none;
@@ -73,34 +72,39 @@
         cursor: pointer;
     }
 
+    /* ---------- Page Wrapper ---------- */
     .page-wrapper {
       max-width: 100%;
       margin: 0;
       padding: 0;
     }
 
-    /* Hero Section */
-    .page-hero {
-      background-color: #fdfcf9;
-      width: 100%;
-      margin: 0;
-      padding: 50px 0; /* vertical padding only */
-    }
-
+    /* ---------- Container ---------- */
     .container {
         max-width: 1000px;
         margin: 0 auto;
-        padding: 0 20px; /* horizontal padding consistent */
+        padding: 0 20px;
         display: flex;
-        gap: 2rem;
+        gap: 0; /* no gap here, spacing handled by left column padding */
         box-sizing: border-box;
     }
 
+    /* ---------- Left Columns ---------- */
     .avatar-section, .section-left {
-        flex: 0 0 200px;
+        flex: 0 0 200px;   /* fixed width */
+        padding-right: 2rem; /* consistent spacing to right content */
+        box-sizing: border-box;
+    }
+
+    .avatar-section {
         text-align: center;
     }
 
+    .section-left {
+        text-align: left;
+    }
+
+    /* ---------- Right Columns ---------- */
     .hero-main, .section-right {
         flex: 1;
         display: flex;
@@ -108,11 +112,20 @@
         gap: 2rem;
     }
 
+    /* ---------- Hero ---------- */
+    .page-hero {
+      background-color: #fdfcf9;
+      width: 100%;
+      margin: 0;
+      padding: 50px 0;
+    }
+
     .avatar {
       width: 160px;
       height: 160px;
       border-radius: 50%;
       object-fit: cover;
+      margin-bottom: 1rem;
     }
 
     .hero-name {
@@ -145,7 +158,6 @@
 
     .hero-horizontal-stack {
       display: flex;
-      flex-direction: row;
       gap: 2rem;
       align-items: flex-start;
     }
@@ -154,18 +166,12 @@
       flex: 1;
     }
 
-    /* Publications section */
+    /* ---------- Publications ---------- */
     .section {
       background-color: #fff;
       display: flex;
-      flex-direction: row;
       margin: 0;
-      padding: 50px 0; /* vertical padding only */
-    }
-
-    .section-left {
-      padding: 0 20px;
-      text-align: left;
+      padding: 50px 0;
     }
 
     .section-left h2 {
@@ -191,11 +197,18 @@
       font-style: italic;
     }
 
-    /* Responsive */
+    /* ---------- Responsive ---------- */
     @media (max-width: 768px) {
       .container {
         flex-direction: column;
         align-items: center;
+        padding: 0 10px;
+      }
+
+      .avatar-section, .section-left {
+        flex: none;
+        padding-right: 0;
+        text-align: center;
       }
 
       .hero-horizontal-stack {
@@ -205,35 +218,27 @@
       .section {
         flex-direction: column;
       }
-
-      .section-left {
-        flex: none;
-        text-align: center;
-        padding-bottom: 1rem;
-      }
     }
   </style>
 </head>
 <body>
 
 <header class="site-header">
-    <div class="container">
-        <nav class="navbar">
-            <a href="#" class="navbar-brand">Qiyuan Wu</a>
-            <ul class="navbar-nav left-nav">
-                <li><a href="#about" class="nav-link">About Me</a></li>
-                <li><a href="#news" class="nav-link">News</a></li>
-                <li><a href="#publications" class="nav-link">Publications</a></li>
-                <li><a href="#experience" class="nav-link">Experience</a></li>
-            </ul>
-            <button class="mode-toggle">🌙</button>
-        </nav>
-    </div>
+    <nav class="navbar">
+        <a href="#" class="navbar-brand">Qiyuan Wu</a>
+        <ul class="navbar-nav left-nav">
+            <li><a href="#about" class="nav-link">About Me</a></li>
+            <li><a href="#news" class="nav-link">News</a></li>
+            <li><a href="#publications" class="nav-link">Publications</a></li>
+            <li><a href="#experience" class="nav-link">Experience</a></li>
+        </ul>
+        <button class="mode-toggle">🌙</button>
+    </nav>
 </header>
 
 <main class="page-wrapper">
 
-  <!-- Hero Section -->
+  <!-- ===== Hero Section ===== -->
   <div class="page-hero" id="about">
     <div class="container">
       <div class="avatar-section">
@@ -285,7 +290,7 @@
     </div>
   </div>
 
-  <!-- Publications Section -->
+  <!-- ===== Publications ===== -->
   <div class="section" id="publications">
     <div class="container">
       <div class="section-left">
