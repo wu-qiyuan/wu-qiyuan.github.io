@@ -30,8 +30,8 @@
     }
     
     .navbar {
-        max-width: 1200px;
-        margin: 0 auto;
+        max-width: 100%;
+        margin: 0;
         padding: 1rem 2rem;
         display: flex;
         align-items: center;
@@ -73,13 +73,16 @@
     .page-wrapper {
       max-width: 100%;
       margin: 0;
-      padding: 20px;
+      padding: 0;
     }
 
     .page-hero {
       background-color: #f5f1e6;   /* slightly darker beige */
       display: flex;
       flex-direction: row;
+      width: 100%;
+      margin: 0;    /* removes top/bottom margin */
+      padding: 20px; /* optional: internal padding */
     }
 
     .avatar-section {
@@ -285,5 +288,6 @@
 </main>
 </body>
 </html>
+
 
 
