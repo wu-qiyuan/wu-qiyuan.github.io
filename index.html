@@ -78,12 +78,25 @@
 
     .page-hero {
       background-color: #faf8f3;   /* slightly darker beige */
-      display: flex;
       flex-direction: row;
       width: 100%;
       margin: 0;    /* removes top/bottom margin */
       padding: 50px 50px; /* optional: internal padding */
     }
+
+    .container {
+        max-width: 1000px;           /* limit content width */
+        margin: 0 auto;              /* center horizontally */
+        padding: 0 20px;             /* internal left/right padding */
+        box-sizing: border-box;
+        display: flex;               /* arrange avatar and content in a row */
+        gap: 2rem;                   /* spacing between avatar and content */
+    }
+    
+    .hero-main {
+        flex: 1;                     /* take remaining space */
+    }
+
 
     .avatar-section {
       flex: 0 0 200px;
@@ -175,13 +188,6 @@
 
     .publication-authors {
       font-style: italic;
-    }
-
-    .container {
-        max-width: 1000px;           /* your desired content width */
-        margin: 0 auto;              /* centers horizontally */
-        padding: 2% 5%;              /* internal padding */
-        box-sizing: border-box;
     }
 
     /* ---------- Responsive ---------- */
@@ -299,6 +305,7 @@
 </main>
 </body>
 </html>
+
 
 
 
