@@ -21,66 +21,62 @@
       line-height: 1.6;
     }
 
-    /* Header */
     .site-header {
-      background-color: #faf8f3;
-      border-bottom: 1px solid #ddd;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-    .navbar {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 0.5rem 20px;
-      display: flex;
-      align-items: center;
-      box-sizing: border-box;
-    }
-    .navbar-brand {
-      font-size: 1.25rem;
-      font-weight: 600;
-      color: var(--text-color);
-      text-decoration: none;
-    }
-    .navbar-nav.left-nav {
-      display: flex;
-      list-style: none;
-      gap: 2rem;
-      margin-left: 2rem;
-    }
-    .nav-link {
-      color: var(--text-color);
-      text-decoration: none;
-      font-weight: 400;
-      transition: color 0.3s ease;
-    }
-    .nav-link:hover {
-      color: var(--primary-color);
-    }
-    .mode-toggle {
-      margin-left: auto;
-      background: none;
-      border: none;
-      font-size: 1.25rem;
-      cursor: pointer;
+        background-color: #faf8f3;
+        border-bottom: 1px solid #ddd;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        padding: 0.5rem 0;
     }
 
-    /* Wrapper */
+    /* Navbar inside container for consistent width */
+    .navbar {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        box-sizing: border-box;
+    }
+
+    .navbar-brand {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: var(--text-color);
+        text-decoration: none;
+    }
+
+    .navbar-nav.left-nav {
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+        margin-left: 2rem;
+    }
+
+    .nav-link {
+        color: var(--text-color);
+        text-decoration: none;
+        font-weight: 400;
+        transition: color 0.3s ease;
+    }
+
+    .nav-link:hover {
+        color: var(--primary-color);
+    }
+
+    .mode-toggle {
+        margin-left: auto;
+        background: none;
+        border: none;
+        font-size: 1.25rem;
+        cursor: pointer;
+    }
+
     .page-wrapper {
       max-width: 100%;
       margin: 0;
       padding: 0;
-    }
-
-    /* Container */
-    .container {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 0 20px;
-      display: flex;
-      gap: 2rem; 
-      box-sizing: border-box;
     }
 
     /* Hero Section */
@@ -88,88 +84,109 @@
       background-color: #fdfcf9;
       width: 100%;
       margin: 0;
-      padding: 50px 0;
+      padding: 50px 0; /* vertical padding only */
     }
-    .avatar-section {
-      flex: 0 0 200px;
-      text-align: center;
-      padding: 0 0; /* no extra horizontal padding */
+
+    .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0 20px; /* horizontal padding consistent */
+        display: flex;
+        gap: 2rem;
+        box-sizing: border-box;
     }
-    .hero-main {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
+
+    .avatar-section, .section-left {
+        flex: 0 0 200px;
+        text-align: center;
     }
+
+    .hero-main, .section-right {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
     .avatar {
       width: 160px;
       height: 160px;
       border-radius: 50%;
       object-fit: cover;
     }
+
     .hero-name {
       font-size: 1.5rem;
       font-weight: bold;
       margin-top: 0.5rem;
     }
+
     .hero-title {
       font-size: 1rem;
       color: var(--secondary-color);
     }
+
     .hero-content {
       flex: 1;
     }
+
     .news-container {
       margin-top: 0.5rem;
     }
+
     .news-item {
       margin-bottom: 0.5rem;
     }
+
     .news-date {
       font-weight: bold;
       margin-right: 0.5rem;
     }
+
     .hero-horizontal-stack {
       display: flex;
       flex-direction: row;
       gap: 2rem;
       align-items: flex-start;
     }
+
     .hero-horizontal-stack .hero-content {
       flex: 1;
     }
 
-    /* Publications Section */
+    /* Publications section */
     .section {
       background-color: #fff;
       display: flex;
       flex-direction: row;
       margin: 0;
-      padding: 50px 0;
+      padding: 50px 0; /* vertical padding only */
     }
+
     .section-left {
-      flex: 0 0 200px;
-      padding-right: 20px;
+      padding: 0 20px;
       text-align: left;
     }
+
     .section-left h2 {
       margin: 0;
       font-size: 1.5rem;
     }
+
     .section-left p {
       font-size: 0.9rem;
       color: var(--secondary-color);
       margin-top: 0.3rem;
     }
-    .section-right {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
+
+    .publication {
+      margin-bottom: 1rem;
     }
+
     .publication-title {
       font-weight: bold;
     }
+
     .publication-authors {
       font-style: italic;
     }
@@ -180,41 +197,43 @@
         flex-direction: column;
         align-items: center;
       }
-      .avatar-section, .section-left {
-        flex: none;
-        width: auto;
-        text-align: center;
-        padding: 0;
-      }
+
       .hero-horizontal-stack {
         flex-direction: column;
       }
+
       .section {
         flex-direction: column;
       }
+
       .section-left {
+        flex: none;
+        text-align: center;
         padding-bottom: 1rem;
       }
     }
   </style>
 </head>
 <body>
+
 <header class="site-header">
-    <nav class="navbar">
-        <a href="#" class="navbar-brand">Qiyuan Wu</a>
-        <ul class="navbar-nav left-nav">
-            <li><a href="#about" class="nav-link">About Me</a></li>
-            <li><a href="#news" class="nav-link">News</a></li>
-            <li><a href="#publications" class="nav-link">Publications</a></li>
-            <li><a href="#experience" class="nav-link">Experience</a></li>
-        </ul>
-        <button class="mode-toggle">🌙</button>
-    </nav>
+    <div class="container">
+        <nav class="navbar">
+            <a href="#" class="navbar-brand">Qiyuan Wu</a>
+            <ul class="navbar-nav left-nav">
+                <li><a href="#about" class="nav-link">About Me</a></li>
+                <li><a href="#news" class="nav-link">News</a></li>
+                <li><a href="#publications" class="nav-link">Publications</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+            </ul>
+            <button class="mode-toggle">🌙</button>
+        </nav>
+    </div>
 </header>
 
 <main class="page-wrapper">
 
-  <!-- Hero -->
+  <!-- Hero Section -->
   <div class="page-hero" id="about">
     <div class="container">
       <div class="avatar-section">
@@ -266,7 +285,7 @@
     </div>
   </div>
 
-  <!-- Publications -->
+  <!-- Publications Section -->
   <div class="section" id="publications">
     <div class="container">
       <div class="section-left">
