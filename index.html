@@ -12,7 +12,7 @@
       --text-color: #333;
       --bg-color: #fff;
       --left-column-width: 200px;
-      --gap: 2rem;
+      --content-max-width: 600px;
     }
 
     body {
@@ -23,188 +23,306 @@
       line-height: 1.6;
     }
 
-    /* Header */
+    /* ---------- Header ---------- */
     .site-header {
-      background-color: #faf8f3;
-      border-bottom: 1px solid #ddd;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      padding: 0.5rem 20px;
-      box-sizing: border-box;
+        background-color: #faf8f3;
+        border-bottom: 1px solid #ddd;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        padding: 0.5rem 20px;
+        box-sizing: border-box;
     }
 
     .navbar {
-      max-width: 1000px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
+        max-width: 1000px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
     }
 
     .navbar-brand {
-      font-size: 1.25rem;
-      font-weight: 600;
-      color: var(--text-color);
-      text-decoration: none;
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: var(--text-color);
+        text-decoration: none;
     }
 
     .navbar-nav.left-nav {
-      display: flex;
-      list-style: none;
-      gap: 2rem;
-      margin-left: 2rem;
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+        margin-left: 2rem;
     }
 
     .nav-link {
-      color: var(--text-color);
-      text-decoration: none;
-      font-weight: 400;
-      transition: color 0.3s ease;
+        color: var(--text-color);
+        text-decoration: none;
+        font-weight: 400;
+        transition: color 0.3s ease;
     }
 
     .nav-link:hover {
-      color: var(--primary-color);
+        color: var(--primary-color);
     }
 
     .mode-toggle {
-      margin-left: auto;
-      background: none;
-      border: none;
-      font-size: 1.25rem;
-      cursor: pointer;
+        margin-left: auto;
+        background: none;
+        border: none;
+        font-size: 1.25rem;
+        cursor: pointer;
     }
 
-    /* Containers */
-    .page-wrapper { max-width: 100%; margin:0; padding:0; }
+    /* ---------- Page Wrapper ---------- */
+    .page-wrapper {
+      max-width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* ---------- Container ---------- */
     .container {
-      max-width: 1000px;
-      margin: 0 auto;
-      display: flex;
-      gap: var(--gap);
-      box-sizing: border-box;
-      padding: 0 20px;
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: flex;
+        gap: 0;
+        box-sizing: border-box;
     }
 
-    /* Left column */
+    /* ---------- Left Columns ---------- */
     .avatar-section, .section-left {
-      flex: 0 0 var(--left-column-width);
-      padding-right: var(--gap);
-      box-sizing: border-box;
-      text-align: left;
+        flex: 0 0 var(--left-column-width);
+        padding-right: 2rem;
+        box-sizing: border-box;
     }
 
-    .avatar-section { display: flex; flex-direction: column; }
-    .avatar { width: 160px; height: 160px; border-radius: 50%; object-fit: cover; margin-bottom: 1rem; }
+    .avatar-section {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* aligns text content to the left */
+    }
 
-    /* Right column */
+    .avatar-section .avatar {
+        align-self: center; /* only centers the image */
+    }
+
+    .section-left {
+        text-align: left;
+    }
+
+    /* ---------- Right Columns ---------- */
     .hero-main, .section-right {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      gap: var(--gap);
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        max-width: var(--content-max-width);
     }
 
-    /* Hero */
-    .page-hero { background-color: #fdfcf9; width: 100%; margin:0; padding:50px 0; }
+    /* ---------- Hero ---------- */
+    .page-hero {
+      background-color: #fdfcf9;
+      width: 100%;
+      margin: 0;
+      padding: 50px 0;
+    }
 
-    .hero-name { font-size: 1.5rem; font-weight: bold; margin-top: 0.5rem; }
-    .hero-title { font-size: 1rem; color: var(--secondary-color); }
-    .social-icons { margin-top: 0.5rem; }
-    .social-icons a { margin-right:0.5rem; color: var(--text-color); font-size:1.2rem; transition: color 0.3s; }
-    .social-icons a:hover { color: var(--primary-color); }
+    .avatar {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
 
-    .hero-content h2 { margin-top:0; margin-bottom:0.5rem; }
-    .news-container { margin-top:0.5rem; }
-    .news-item { margin-bottom:0.5rem; }
-    .news-date { font-weight:bold; margin-right:0.5rem; }
+    .hero-name {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-top: 0.5rem;
+    }
 
-    .hero-horizontal-stack { display:flex; gap:var(--gap); align-items:flex-start; }
+    .hero-title {
+      font-size: 1rem;
+      color: var(--secondary-color);
+    }
 
-    /* Publications */
-    .section { background-color:#fff; display:flex; margin:0; padding:50px 0; }
-    .section-left h2 { margin:0; font-size:1.5rem; }
-    .section-left p { font-size:0.9rem; color: var(--secondary-color); margin-top:0.3rem; }
-    .publication { margin-bottom:1rem; }
-    .publication-title { font-weight:bold; }
-    .publication-authors { font-style: italic; }
+    .social-icons {
+      margin-top: 0.5rem;
+    }
 
-    /* Responsive */
-    @media(max-width:768px){
-      .container { flex-direction: column; padding:0 10px; align-items:center; }
-      .avatar-section, .section-left { flex:none; padding-right:0; text-align:center; }
-      .hero-horizontal-stack { flex-direction: column; }
-      .section { flex-direction: column; }
+    .social-icons a {
+      margin: 0 0.3rem;
+      color: var(--text-color);
+      text-decoration: none;
+      font-size: 1.2rem;
+      transition: color 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: var(--primary-color);
+    }
+
+    .hero-content h2 {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+    }
+
+    .news-container {
+      margin-top: 0.5rem;
+    }
+
+    .news-item {
+      margin-bottom: 0.5rem;
+    }
+
+    .news-date {
+      font-weight: bold;
+      margin-right: 0.5rem;
+    }
+
+    .hero-horizontal-stack {
+      display: flex;
+      gap: 2rem;
+      align-items: flex-start;
+    }
+
+    /* ---------- Publications ---------- */
+    .section {
+      background-color: #fff;
+      display: flex;
+      margin: 0;
+      padding: 50px 0;
+    }
+
+    .section-left h2 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
+    .section-left p {
+      font-size: 0.9rem;
+      color: var(--secondary-color);
+      margin-top: 0.3rem;
+    }
+
+    .publication {
+      margin-bottom: 1rem;
+    }
+
+    .publication-title {
+      font-weight: bold;
+    }
+
+    .publication-authors {
+      font-style: italic;
+    }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 10px;
+      }
+
+      .avatar-section, .section-left {
+        flex: none;
+        padding-right: 0;
+        text-align: center;
+        align-items: center;
+      }
+
+      .hero-horizontal-stack {
+        flex-direction: column;
+      }
+
+      .section {
+        flex-direction: column;
+      }
+
+      .hero-main {
+        max-width: 100%;
+      }
     }
   </style>
 </head>
 <body>
 
 <header class="site-header">
-  <nav class="navbar">
-    <a href="#" class="navbar-brand">Qiyuan Wu</a>
-    <ul class="navbar-nav left-nav">
-      <li><a href="#about" class="nav-link">About Me</a></li>
-      <li><a href="#news" class="nav-link">News</a></li>
-      <li><a href="#publications" class="nav-link">Publications</a></li>
-      <li><a href="#experience" class="nav-link">Experience</a></li>
-    </ul>
-    <button class="mode-toggle">🌙</button>
-  </nav>
+    <nav class="navbar">
+        <a href="#" class="navbar-brand">Qiyuan Wu</a>
+        <ul class="navbar-nav left-nav">
+            <li><a href="#about" class="nav-link">About Me</a></li>
+            <li><a href="#news" class="nav-link">News</a></li>
+            <li><a href="#publications" class="nav-link">Publications</a></li>
+            <li><a href="#experience" class="nav-link">Experience</a></li>
+        </ul>
+        <button class="mode-toggle">🌙</button>
+    </nav>
 </header>
 
 <main class="page-wrapper">
 
-  <!-- Hero -->
+  <!-- ===== Hero Section ===== -->
   <div class="page-hero" id="about">
     <div class="container">
+      
+      <!-- Left column: avatar -->
       <div class="avatar-section">
-        <img src="img/profile.png" alt="Qiyuan Wu" class="avatar">
-        <div class="hero-name">Qiyuan Wu</div>
-        <div class="hero-title">Postdoctoral Researcher</div>
-        <div class="social-icons">
-          <a href="#"><i class="fas fa-envelope"></i></a>
-          <a href="#"><i class="fab fa-github"></i></a>
-          <a href="#"><i class="fas fa-graduation-cap"></i></a>
-          <a href="#"><i class="fab fa-linkedin"></i></a>
-        </div>
+          <img src="img/profile.png" alt="Qiyuan Wu" class="avatar">
+          <div class="hero-name">Qiyuan Wu</div>
+          <div class="hero-title">Postdoctoral Researcher</div>
+          <div class="social-icons">
+            <a href="mailto:yourname@domain.com" target="_blank"><i class="fas fa-envelope"></i></a>
+            <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://scholar.google.com/citations?user=XXXX" target="_blank"><i class="fas fa-graduation-cap"></i></a>
+            <a href="https://www.linkedin.com/in/yourusername/" target="_blank"><i class="fab fa-linkedin"></i></a>
+          </div>
       </div>
 
+      <!-- Right column: all hero content -->
       <div class="hero-main">
+        
+        <!-- About Me + News -->
         <div>
-          <h2>About Me</h2>
-          <p>...</p>
+            <h2>About Me</h2>
+            <p>...</p>
 
-          <h2>News</h2>
-          <div class="news-container">
-            <div class="news-item">
-              <div class="news-date">[Oct. 2024]</div>
-              <div class="news-content">Gave a talk at …</div>
+            <h2>News</h2>
+            <div class="news-container">
+                <div class="news-item">
+                    <div class="news-date">[Oct. 2024]</div>
+                    <div class="news-content">Gave a talk at …</div>
+                </div>
+                <div class="news-item">
+                    <div class="news-date">[Sep. 2024]</div>
+                    <div class="news-content">Paper accepted at NeurIPS 2024</div>
+                </div>
             </div>
-            <div class="news-item">
-              <div class="news-date">[Sep. 2024]</div>
-              <div class="news-content">Paper accepted at NeurIPS 2024</div>
-            </div>
-          </div>
         </div>
 
+        <!-- Interests + Education side by side -->
         <div class="hero-horizontal-stack">
           <div class="hero-content">
-            <h2>Interests</h2>
-            <p>...</p>
+              <h2>Interests</h2>
+              <p>...</p>
           </div>
           <div class="hero-content">
-            <h2>Education</h2>
-            <ul class="education-list">
-              <li>Ph.D. in Computer Science, Cornell University</li>
-              <li>B.S. in Physics, Tsinghua University</li>
-            </ul>
+              <h2>Education</h2>
+              <ul class="education-list">
+                <li>Ph.D. in Computer Science, Cornell University</li>
+                <li>B.S. in Physics, Tsinghua University</li>
+              </ul>
           </div>
         </div>
+
       </div>
     </div>
   </div>
 
-  <!-- Publications -->
+  <!-- ===== Publications ===== -->
   <div class="section" id="publications">
     <div class="container">
       <div class="section-left">
