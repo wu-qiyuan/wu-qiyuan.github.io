@@ -12,7 +12,7 @@
       --text-color: #333;
       --bg-color: #fff;
       --left-column-width: 200px;
-      --content-max-width: 600px;
+      --right-column-width: 600px;
       --gap: 2rem;
     }
 
@@ -24,7 +24,7 @@
       line-height: 1.6;
     }
 
-    /* Header */
+    /* ---------- Header ---------- */
     .site-header {
       background-color: #faf8f3;
       border-bottom: 1px solid #ddd;
@@ -75,75 +75,65 @@
       cursor: pointer;
     }
 
-    /* Page wrapper */
-    .page-wrapper { max-width: 100%; margin:0; padding:0; }
-
-    /* Generic container for hero and publications */
+    /* ---------- Grid Container ---------- */
     .container {
-      max-width: 1000px;
-      margin: 0 auto;
-      display: flex;
+      display: grid;
+      grid-template-columns: var(--left-column-width) var(--right-column-width);
       gap: var(--gap);
-      box-sizing: border-box;
+      max-width: calc(var(--left-column-width) + var(--right-column-width) + var(--gap) + 40px);
+      margin: 0 auto;
       padding: 0 20px;
-      align-items: flex-start;
-    }
-
-    /* Left column: fixed width */
-    .avatar-section, .section-left {
-      flex: 0 0 var(--left-column-width);
-      padding-right: var(--gap);
       box-sizing: border-box;
     }
 
-    .avatar-section {
-      display: flex;
-      flex-direction: column;
+    /* ---------- Left Column ---------- */
+    .avatar-section, .section-left {
       text-align: center;
     }
 
     .avatar { width: 160px; height: 160px; border-radius: 50%; object-fit: cover; margin-bottom: 1rem; }
+    .hero-name { font-size: 1.5rem; font-weight: bold; margin-top: 0.5rem; }
+    .hero-title { font-size: 1rem; color: var(--secondary-color); }
+    .social-icons { margin-top: 0.5rem; }
+    .social-icons a { margin: 0 0.3rem; color: var(--text-color); font-size:1.2rem; transition: color 0.3s; }
+    .social-icons a:hover { color: var(--primary-color); }
 
-    /* Right column: fixed max width to align hero and publications */
+    /* ---------- Right Column ---------- */
     .hero-main, .section-right {
-      flex: 1;
-      max-width: var(--content-max-width);
       display: flex;
       flex-direction: column;
       gap: var(--gap);
     }
-
-    /* Hero section */
-    .page-hero { background-color: #fdfcf9; width: 100%; margin:0; padding:50px 0; }
-
-    .hero-name { font-size: 1.5rem; font-weight: bold; margin-top: 0.5rem; }
-    .hero-title { font-size: 1rem; color: var(--secondary-color); }
-    .social-icons { margin-top: 0.5rem; }
-    .social-icons a { margin-right:0.5rem; color: var(--text-color); font-size:1.2rem; transition: color 0.3s; }
-    .social-icons a:hover { color: var(--primary-color); }
 
     .hero-content h2 { margin-top:0; margin-bottom:0.5rem; }
     .news-container { margin-top:0.5rem; }
     .news-item { margin-bottom:0.5rem; }
     .news-date { font-weight:bold; margin-right:0.5rem; }
 
-    .hero-horizontal-stack { display:flex; gap:var(--gap); align-items:flex-start; }
+    /* Side-by-side within right column */
+    .hero-horizontal-stack {
+      display: flex;
+      gap: var(--gap);
+      flex-wrap: wrap;
+    }
+    .hero-horizontal-stack > div { flex: 1; min-width: calc(50% - var(--gap)/2); }
 
-    /* Publications */
-    .section { background-color:#fff; display:flex; padding:50px 0; }
+    /* ---------- Hero Section ---------- */
+    .page-hero { background-color: #fdfcf9; width:100%; padding:50px 0; }
+
+    /* ---------- Publications Section ---------- */
+    .section { background-color:#fff; padding:50px 0; }
     .section-left h2 { margin:0; font-size:1.5rem; }
     .section-left p { font-size:0.9rem; color: var(--secondary-color); margin-top:0.3rem; }
     .publication { margin-bottom:1rem; }
     .publication-title { font-weight:bold; }
     .publication-authors { font-style: italic; }
 
-    /* Responsive */
+    /* ---------- Responsive ---------- */
     @media(max-width:768px){
-      .container { flex-direction: column; padding:0 10px; align-items:center; }
-      .avatar-section, .section-left { flex:none; padding-right:0; text-align:center; }
+      .container { grid-template-columns: 1fr; padding:0 10px; }
+      .avatar-section, .section-left { text-align:center; }
       .hero-horizontal-stack { flex-direction: column; }
-      .section { flex-direction: column; }
-      .hero-main, .section-right { max-width: 100%; }
     }
 
   </style>
@@ -199,11 +189,11 @@
         </div>
 
         <div class="hero-horizontal-stack">
-          <div class="hero-content">
+          <div>
             <h2>Interests</h2>
             <p>...</p>
           </div>
-          <div class="hero-content">
+          <div>
             <h2>Education</h2>
             <ul class="education-list">
               <li>Ph.D. in Computer Science, Cornell University</li>
@@ -215,7 +205,7 @@
     </div>
   </div>
 
-  <!-- Publications Section: aligned with hero -->
+  <!-- Publications Section -->
   <div class="section" id="publications">
     <div class="container">
       <div class="section-left">
