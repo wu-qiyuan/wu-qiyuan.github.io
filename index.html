@@ -12,6 +12,7 @@
       --text-color: #333;
       --bg-color: #fff;
       --left-column-width: 200px;
+      --content-max-width: 600px;
       --gap: 2rem;
     }
 
@@ -23,7 +24,7 @@
       line-height: 1.6;
     }
 
-    /* ---------- Header ---------- */
+    /* Header */
     .site-header {
       background-color: #faf8f3;
       border-bottom: 1px solid #ddd;
@@ -74,8 +75,10 @@
       cursor: pointer;
     }
 
-    /* ---------- Containers ---------- */
+    /* Page wrapper */
     .page-wrapper { max-width: 100%; margin:0; padding:0; }
+
+    /* Generic container for hero and publications */
     .container {
       max-width: 1000px;
       margin: 0 auto;
@@ -86,26 +89,31 @@
       align-items: flex-start;
     }
 
-    /* ---------- Left column ---------- */
+    /* Left column: fixed width */
     .avatar-section, .section-left {
       flex: 0 0 var(--left-column-width);
       padding-right: var(--gap);
       box-sizing: border-box;
-      text-align: left;
     }
 
-    .avatar-section { display: flex; flex-direction: column; }
+    .avatar-section {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+    }
+
     .avatar { width: 160px; height: 160px; border-radius: 50%; object-fit: cover; margin-bottom: 1rem; }
 
-    /* ---------- Right column ---------- */
+    /* Right column: fixed max width to align hero and publications */
     .hero-main, .section-right {
       flex: 1;
+      max-width: var(--content-max-width);
       display: flex;
       flex-direction: column;
       gap: var(--gap);
     }
 
-    /* ---------- Hero ---------- */
+    /* Hero section */
     .page-hero { background-color: #fdfcf9; width: 100%; margin:0; padding:50px 0; }
 
     .hero-name { font-size: 1.5rem; font-weight: bold; margin-top: 0.5rem; }
@@ -121,7 +129,7 @@
 
     .hero-horizontal-stack { display:flex; gap:var(--gap); align-items:flex-start; }
 
-    /* ---------- Publications ---------- */
+    /* Publications */
     .section { background-color:#fff; display:flex; padding:50px 0; }
     .section-left h2 { margin:0; font-size:1.5rem; }
     .section-left p { font-size:0.9rem; color: var(--secondary-color); margin-top:0.3rem; }
@@ -129,13 +137,15 @@
     .publication-title { font-weight:bold; }
     .publication-authors { font-style: italic; }
 
-    /* ---------- Responsive ---------- */
+    /* Responsive */
     @media(max-width:768px){
       .container { flex-direction: column; padding:0 10px; align-items:center; }
       .avatar-section, .section-left { flex:none; padding-right:0; text-align:center; }
       .hero-horizontal-stack { flex-direction: column; }
       .section { flex-direction: column; }
+      .hero-main, .section-right { max-width: 100%; }
     }
+
   </style>
 </head>
 <body>
@@ -155,7 +165,7 @@
 
 <main class="page-wrapper">
 
-  <!-- Hero -->
+  <!-- Hero Section -->
   <div class="page-hero" id="about">
     <div class="container">
       <div class="avatar-section">
@@ -205,7 +215,7 @@
     </div>
   </div>
 
-  <!-- Publications: same container/grid as hero for exact alignment -->
+  <!-- Publications Section: aligned with hero -->
   <div class="section" id="publications">
     <div class="container">
       <div class="section-left">
