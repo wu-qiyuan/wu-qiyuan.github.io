@@ -13,8 +13,10 @@
       --bg-color: #fff;
       --left-column-width: 200px;
       --right-column-width: 600px;
-      --gap: 4rem; /* doubled gap */
-      --right-column-padding: 1rem; /* padding inside right column */
+      --gap: 4rem;
+      --right-column-padding: 1rem;
+      --base-font-size: 1.05rem; /* slightly larger base font */
+      --heading-font-size: 1.6rem; /* slightly larger h2 */
     }
 
     body {
@@ -23,6 +25,7 @@
       background: var(--bg-color);
       color: var(--text-color);
       line-height: 1.6;
+      font-size: var(--base-font-size);
     }
 
     /* ---------- Header ---------- */
@@ -34,6 +37,7 @@
       z-index: 10;
       padding: 0.5rem 20px;
       box-sizing: border-box;
+      font-size: 1rem; /* keep navbar unchanged */
     }
 
     .navbar {
@@ -93,10 +97,10 @@
     }
 
     .avatar { width: 160px; height: 160px; border-radius: 50%; object-fit: cover; margin-bottom: 1rem; }
-    .hero-name { font-size: 1.5rem; font-weight: bold; margin-top: 0.5rem; }
-    .hero-title { font-size: 1rem; color: var(--secondary-color); }
+    .hero-name { font-size: 1.7rem; font-weight: bold; margin-top: 0.5rem; } /* slightly bigger */
+    .hero-title { font-size: 1.1rem; color: var(--secondary-color); }
     .social-icons { margin-top: 0.5rem; }
-    .social-icons a { margin: 0 0.3rem; color: var(--text-color); font-size:1.2rem; transition: color 0.3s; }
+    .social-icons a { margin: 0 0.3rem; color: var(--text-color); font-size:1.3rem; transition: color 0.3s; }
     .social-icons a:hover { color: var(--primary-color); }
 
     /* ---------- Right Column ---------- */
@@ -104,10 +108,11 @@
       display: flex;
       flex-direction: column;
       gap: var(--gap);
-      padding-left: var(--right-column-padding); /* added padding */
+      padding-left: var(--right-column-padding);
+      font-size: var(--base-font-size);
     }
 
-    .hero-content h2 { margin-top:0; margin-bottom:0.5rem; }
+    .hero-content h2 { margin-top:0; margin-bottom:0.5rem; font-size: var(--heading-font-size); }
     .news-container { margin-top:0.5rem; }
     .news-item { margin-bottom:0.5rem; }
     .news-date { font-weight:bold; margin-right:0.5rem; }
@@ -125,18 +130,18 @@
 
     /* ---------- Publications Section ---------- */
     .section { background-color:#fff; padding:50px 0; }
-    .section-left h2 { margin:0; font-size:1.5rem; }
-    .section-left p { font-size:0.9rem; color: var(--secondary-color); margin-top:0.3rem; }
+    .section-left h2 { margin:0; font-size: var(--heading-font-size); }
+    .section-left p { font-size:1rem; color: var(--secondary-color); margin-top:0.3rem; }
     .publication { margin-bottom:1rem; }
-    .publication-title { font-weight:bold; }
-    .publication-authors { font-style: italic; }
+    .publication-title { font-weight:bold; font-size:1.1rem; }
+    .publication-authors { font-style: italic; font-size:1rem; }
 
     /* ---------- Responsive ---------- */
     @media(max-width:768px){
       .container { grid-template-columns: 1fr; padding:0 10px; }
       .avatar-section, .section-left { text-align:center; }
       .hero-horizontal-stack { flex-direction: column; }
-      .hero-main, .section-right { padding-left: 0; } /* remove padding on small screens */
+      .hero-main, .section-right { padding-left: 0; }
     }
 
   </style>
