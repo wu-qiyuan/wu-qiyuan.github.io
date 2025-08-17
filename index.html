@@ -22,17 +22,17 @@
     }
 
     .site-header {
-        background-color: #f5f1e6; /* slightly darker beige than hero */
-        border-bottom: 1px solid var(--border-color);
+        background-color: #faf8f3; /* top bar uses hero background now */
+        border-bottom: 1px solid #ddd;
         position: sticky;
         top: 0;
         z-index: 10;
+        padding: 0.5rem 2rem; /* reduced height */
     }
     
     .navbar {
         max-width: 100%;
         margin: 0;
-        padding: 0.5rem 2rem;
         display: flex;
         align-items: center;
     }
@@ -76,30 +76,33 @@
       padding: 0;
     }
 
+    /* Hero Section */
     .page-hero {
-      background-color: #faf8f3;   /* slightly darker beige */
-      flex-direction: row;
+      background-color: #fdfcf9; /* sections background now */
       width: 100%;
-      margin: 0;    /* removes top/bottom margin */
-      padding: 50px 50px; /* optional: internal padding */
+      margin: 0;
+      padding: 50px 0; /* vertical padding only */
     }
 
     .container {
-        max-width: 1000px;           /* limit content width */
-        margin: 0 auto;              /* center horizontally */
-        padding: 0 20px;             /* internal left/right padding */
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: flex;
+        gap: 2rem; /* horizontal gap between left and right columns */
         box-sizing: border-box;
-        display: flex;               /* arrange avatar and content in a row */
-        gap: 2rem;                   /* spacing between avatar and content */
     }
-    
-    .hero-main, .section-right {
-        flex: 1;                  /* right side takes remaining space */
-    }
-
 
     .avatar-section, .section-left {
-        flex: 0 0 200px;          /* same width for photo and section title */
+        flex: 0 0 200px; /* fixed width for left columns */
+        text-align: center;
+    }
+
+    .hero-main, .section-right {
+        flex: 1; /* right content fills remaining space */
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
     }
 
     .avatar {
@@ -140,7 +143,7 @@
     .hero-horizontal-stack {
       display: flex;
       flex-direction: row;
-      gap: 1rem;
+      gap: 2rem; /* consistent with container gap */
       align-items: flex-start;
     }
 
@@ -150,16 +153,17 @@
 
     /* ---------- Publications section ---------- */
     .section {
-      background-color: #fdfcf9;   /* lighter beige */
+      background-color: #fff; /* sections use plain white */
       display: flex;
       flex-direction: row;
       margin: 0;
-      padding: 50px 50px; 
+      padding: 50px 0; /* vertical padding only */
     }
 
     .section-left {
-      flex: 0 0 20px;
-      padding: 20px 30px;
+      flex: 0 0 200px; /* same as avatar-section */
+      padding: 0 20px 0 0;
+      text-align: left;
     }
 
     .section-left h2 {
@@ -171,10 +175,6 @@
       font-size: 0.9rem;
       color: var(--secondary-color);
       margin-top: 0.3rem;
-    }
-
-    .section-right {
-      flex: 1;
     }
 
     .publication {
@@ -191,8 +191,9 @@
 
     /* ---------- Responsive ---------- */
     @media (max-width: 768px) {
-      .page-hero {
+      .container {
         flex-direction: column;
+        align-items: center;
       }
 
       .hero-horizontal-stack {
@@ -205,6 +206,8 @@
 
       .section-left {
         flex: none;
+        text-align: center;
+        padding-bottom: 1rem;
       }
     }
   </style>
@@ -222,10 +225,12 @@
         <button class="mode-toggle">🌙</button>
     </nav>
 </header>
+
 <main class="page-wrapper">
+
   <!-- ===== Hero Section ===== -->
   <div class="page-hero" id="about">
-    <div class="container hero-container">
+    <div class="container">
       <div class="avatar-section">
           <img src="img/profile.png" alt="Qiyuan Wu" class="avatar">
           <div class="hero-name">Qiyuan Wu</div>
@@ -238,13 +243,12 @@
           </div>
       </div>
 
-      <!-- wrap all content in hero-main -->
       <div class="hero-main">
           <div class="hero-content">
               <h2>About Me</h2>
               <p>...</p>
           </div>
-  
+
           <div class="hero-content">
               <h2>News</h2>
               <div class="news-container">
@@ -258,7 +262,7 @@
                   </div>
               </div>
           </div>
-  
+
           <div class="hero-horizontal-stack">
               <div class="hero-content">
                   <h2>Interests</h2>
@@ -278,7 +282,7 @@
 
   <!-- ===== Publications ===== -->
   <div class="section" id="publications">
-    <div class="container hero-container">
+    <div class="container">
       <div class="section-left">
         <h2>Publications</h2>
         <p>(* indicates equal contribution)</p>
@@ -306,21 +310,3 @@
 </main>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
