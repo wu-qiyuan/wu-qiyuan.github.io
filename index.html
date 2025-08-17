@@ -127,6 +127,19 @@
 
     /* ---------- Hero Section ---------- */
     .page-hero { background-color: #fdfcf9; width:100%; padding:50px 0; }
+    .education-list {
+      list-style: none; /* remove default bullets */
+      padding-left: 0;
+    }
+    
+    .education-list li {
+      margin: 8px 0;
+    }
+    
+    .education-list li i {
+      margin-right: 8px;
+      color: #444; /* pick a color you like */
+    }
 
     /* ---------- Publications Section ---------- */
     .section { background-color:#fff; padding:50px 0; }
@@ -217,15 +230,15 @@
         <div class="hero-horizontal-stack">
           <div>
             <h2>Interests</h2>
-            <p>Autonomous Driving</p>
-            <p>Robot Perception</p>
-            <p>Uncertainty Quantification</p>
+            <li>Autonomous Driving</li>
+            <li>Robot Perception</li>
+            <li>Uncertainty Quantification</li>
           </div>
           <div>
             <h2>Education</h2>
             <ul class="education-list">
-              <li>M.Sc. in Mechanical Engineering, the Johns Hopkins University</li>
-              <li>B.S. in Engineering Mechanics, Shanghai Jiao Tong University</li>
+              <li><i class="fas fa-graduation-cap"></i> M.Sc. in Mechanical Engineering, Johns Hopkins University</li>
+              <li><i class="fas fa-university"></i> B.S. in Engineering Mechanics, Shanghai Jiao Tong University</li>
             </ul>
           </div>
         </div>
@@ -303,6 +316,7 @@
 </main>
 </body>
 </html>
+
 
 
 
