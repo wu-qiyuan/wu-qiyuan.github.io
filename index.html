@@ -95,7 +95,10 @@
     }
     
     .hero-main {
-        flex: 1;                     /* take remaining space */
+        flex: 1;           /* fills the rest of the row */
+        display: flex;
+        flex-direction: column;  /* stack About Me, News, etc vertically */
+        gap: 2rem;
     }
 
 
@@ -306,6 +309,7 @@
 </main>
 </body>
 </html>
+
 
 
 
