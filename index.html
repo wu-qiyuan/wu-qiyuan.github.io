@@ -23,7 +23,7 @@
       line-height: 1.6;
     }
 
-    /* Header */
+    /* ---------- Header ---------- */
     .site-header {
       background-color: #faf8f3;
       border-bottom: 1px solid #ddd;
@@ -74,7 +74,7 @@
       cursor: pointer;
     }
 
-    /* Containers */
+    /* ---------- Containers ---------- */
     .page-wrapper { max-width: 100%; margin:0; padding:0; }
     .container {
       max-width: 1000px;
@@ -83,9 +83,10 @@
       gap: var(--gap);
       box-sizing: border-box;
       padding: 0 20px;
+      align-items: flex-start;
     }
 
-    /* Left column */
+    /* ---------- Left column ---------- */
     .avatar-section, .section-left {
       flex: 0 0 var(--left-column-width);
       padding-right: var(--gap);
@@ -96,7 +97,7 @@
     .avatar-section { display: flex; flex-direction: column; }
     .avatar { width: 160px; height: 160px; border-radius: 50%; object-fit: cover; margin-bottom: 1rem; }
 
-    /* Right column */
+    /* ---------- Right column ---------- */
     .hero-main, .section-right {
       flex: 1;
       display: flex;
@@ -104,7 +105,7 @@
       gap: var(--gap);
     }
 
-    /* Hero */
+    /* ---------- Hero ---------- */
     .page-hero { background-color: #fdfcf9; width: 100%; margin:0; padding:50px 0; }
 
     .hero-name { font-size: 1.5rem; font-weight: bold; margin-top: 0.5rem; }
@@ -120,15 +121,15 @@
 
     .hero-horizontal-stack { display:flex; gap:var(--gap); align-items:flex-start; }
 
-    /* Publications */
-    .section { background-color:#fff; display:flex; margin:0; padding:50px 0; }
+    /* ---------- Publications ---------- */
+    .section { background-color:#fff; display:flex; padding:50px 0; }
     .section-left h2 { margin:0; font-size:1.5rem; }
     .section-left p { font-size:0.9rem; color: var(--secondary-color); margin-top:0.3rem; }
     .publication { margin-bottom:1rem; }
     .publication-title { font-weight:bold; }
     .publication-authors { font-style: italic; }
 
-    /* Responsive */
+    /* ---------- Responsive ---------- */
     @media(max-width:768px){
       .container { flex-direction: column; padding:0 10px; align-items:center; }
       .avatar-section, .section-left { flex:none; padding-right:0; text-align:center; }
@@ -204,7 +205,7 @@
     </div>
   </div>
 
-  <!-- Publications -->
+  <!-- Publications: same container/grid as hero for exact alignment -->
   <div class="section" id="publications">
     <div class="container">
       <div class="section-left">
